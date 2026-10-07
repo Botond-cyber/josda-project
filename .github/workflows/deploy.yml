@@ -2,7 +2,7 @@ name: Deploy static content to Pages
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["master"]
   workflow_dispatch:
 
 permissions:
@@ -35,6 +35,9 @@ jobs:
 
       - name: Lint
         run: npm run lint
+
+      - name: Format code
+        run: npm run format
 
       - name: Build
         run: npm run build
