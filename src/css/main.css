@@ -1,0 +1,35 @@
+@import "@fontsource/cormorant-garamond";
+@import "@fontsource/inter";
+
+
+:root {
+    --surface-primary-light: #F5F0E7;
+    --surface-primary-dark: #10131C;
+    --surface-higlight: #C8A96B;
+    --text-primary-light: #BEB9B4;
+    --text-secondary: #625D58;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    font-family: "Cormorant Garamond", cursive;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-family: "Inter", sans-serif;
+    color: var(--surface-primary-light);
+    background-color: var(--surface-primary-light);
+}
