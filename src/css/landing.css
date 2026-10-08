@@ -1,0 +1,105 @@
+@import "@fontsource/cormorant-garamond";
+@import "@fontsource/cookie";
+
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--surface-primary-dark);
+    -webkit-backdrop-filter: blur(10px);
+    height: 7rem;
+}
+
+.header-logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-family: "Cookie", cursive;
+    font-size: 2rem;
+}
+
+.header-logo img {
+    height: 2rem;
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.nav-item a {
+    text-transform: uppercase;
+    font-weight: lighter;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--surface-primary-light);
+
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    transition: all 200ms ease-in-out;
+
+}
+
+.nav-underline {
+    width: 0;
+    height: 2px;
+    background-color: var(--surface-primary-light);
+    transition: all 200ms ease-in-out;
+}
+
+.nav-item:hover {
+    scale: 1.1;
+
+}
+
+.nav-item:hover .nav-underline {
+    width: 100%;
+    scale: 1.1;
+
+}
+
+.login-btn-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+.begin-btn {
+    background-color: var(--surface-higlight);
+    border: none;
+    color: var(--surface-primary-dark);
+    padding: 1rem 1.5rem;
+    border-radius: 0.6rem;
+    font-size: 1rem;
+    font-family: "Inter", sans-serif;
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+
+}
+
+.begin-btn:hover {
+    scale: 1.04;
+}
+
+.sign-in-btn {
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+}
+
+.sign-in-btn:hover {
+    scale: 1.1;
+}

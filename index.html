@@ -1,21 +1,54 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="%BASE_URL%favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/src/css/style.css" />
-    <title>josda-project</title>
-  </head>
-  <body>
-    <div id="container">
-      <header></header>
-      <div class="hero"></div>
-      <div class="methods"></div>
-      <div class="tellers"></div>
-      <div class="sample"></div>
-      <footer></footer>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/src/css/main.css" />
+  <link rel="stylesheet" href="src/css/landing.css">
+  <title>josda-project</title>
+</head>
+<body>
+<div id="container">
+  <header>
+
+    <div class="header-logo">
+      <img src="/src/assets/dawn-monogram.svg" alt="logo" />
+      <p>DAWN ORACLE</p>
     </div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+
+    <div class="nav">
+      <div class="nav-item"><a href="#">Readings</a>
+        <div class="nav-underline"></div>
+      </div>
+      <div class="nav-item"><a href="#">Methods</a>
+        <div class="nav-underline"></div>
+      </div>
+      <div class="nav-item"><a href="#">Our Oracles</a>
+        <div class="nav-underline"></div>
+      </div>
+      <div class="nav-item"><a href="#">Pricing</a>
+        <div class="nav-underline"></div>
+      </div>
+      <div class="nav-item"><a href="#">Journal</a>
+        <div class="nav-underline"></div>
+      </div>
+      <div class="nav-item"><a href="#">About</a>
+        <div class="nav-underline"></div>
+      </div>
+    </div>
+
+    <div class="login-btn-container">
+      <div class="sign-in-btn">Sign In</div>
+      <button class="begin-btn" type="button">
+        <span>Begin Reading</span>
+        <img src="src/assets/arrow.svg" alt="arrow icon" />
+      </button>
+    </div>
+
+  </header>
+  <footer></footer>
+</div>
+<script type="module" src="/src/main.js"></script>
+</body>
 </html>
