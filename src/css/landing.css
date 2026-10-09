@@ -272,6 +272,104 @@ header {
 }
 
 
+.calling-container {
+    height: fit-content;
+    min-height: 100vh;
+    width: 100%;
+    background-color: var(--surface-primary-light);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem 6rem;
+    color: var(--surface-primary-dark);
+    position:relative
+}
+
+.calling-text {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.calling-text h2 {
+    color: var(--surface-primary-dark);
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    line-height: 6rem;
+    font-size: 6rem;
+    font-weight: lighter;
+    font-family: "Cormorant Garamond", cursive;
+    
+}
+
+.calling-text p:first-of-type {
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    margin-top: 6rem;
+}
+
+.calling-text h3 {
+    color: var(--text-secondary);
+    font-weight: lighter;
+    max-width: 50rem;
+    line-height: 2.5rem;
+    font-size: 1.5rem;
+}
+
+.calling-cards {
+    display: flex;
+    margin-top: 1.5rem;
+    justify-content: space-evenly;
+    gap: 3rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: auto;
+    height: fit-content;
+}
+
+.calling-card {
+
+    width: 30%;
+    min-width: 25rem;
+}
+.calling-card img {
+    width: 100%;
+}
+
+
+.calling-card h4 {
+    text-transform: uppercase;
+    font-family: "Cormorant Garamond", cursive;
+    font-weight: lighter;
+    font-size: 3rem;
+    margin: 1rem 0;
+
+}
+.calling-card p {
+    color: var(--text-secondary);
+}
+
+.calling-card a {
+    /*Még legyen megcsinálva, hogy a card div alján legyen a link :3*/
+    color: var(--surface-primary-dark);
+    text-decoration: none;
+
+}
+.calling-card a:hover {
+    animation-name: link-bg-change;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+
+}
+
+@keyframes link-bg-change {
+    
+  0% {background-color: var(--surface-primary-light); color: var(--surface-primary-dark);}
+  50% {background-color: var(--surface-primary-dark); color: var(--surface-primary-light);}
+  100% {background-color: var(--surface-primary-light); color: var(--surface-primary-dark);}
+}
+
 @media screen and (max-width: 1300px) {
     .hero-card-container {
         display: none;
