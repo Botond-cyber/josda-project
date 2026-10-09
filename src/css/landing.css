@@ -10,6 +10,7 @@ header {
     background-color: var(--surface-primary-dark);
     -webkit-backdrop-filter: blur(10px);
     height: 7rem;
+    overflow: hidden;
 }
 
 .header-logo {
@@ -84,10 +85,12 @@ header {
     font-size: 1rem;
     font-family: "Inter", sans-serif;
     display: flex;
-    justify-content: space-between;
     gap: 0.5rem;
     cursor: pointer;
     transition: all 200ms ease-in-out;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 
 }
 
@@ -98,8 +101,238 @@ header {
 .sign-in-btn {
     cursor: pointer;
     transition: all 200ms ease-in-out;
+
 }
 
 .sign-in-btn:hover {
     scale: 1.1;
+}
+
+
+.hero-container {
+    height: calc(100vh - 7rem);
+    max-height: fit-content;
+    width: 100%;
+    background-image: url("../assets/hero_background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: var(--surface-primary-dark);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem 6rem;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+.hero-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.hero-footer p:first-of-type {
+    color: var(--surface-higlight);
+    text-transform: uppercase;
+}
+
+.hero-footer p:last-of-type {
+    color: var(--text-primary-light);
+}
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+}
+
+.hero-text h1 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    line-height: 10rem;
+    font-size: 9rem;
+    font-weight: lighter;
+}
+
+.hero-text p:first-of-type {
+    color: var(--surface-higlight);
+}
+
+.hero-text h2 {
+    color: var(--text-primary-light);
+    font-weight: lighter;
+    max-width: 50rem;
+    line-height: 2.5rem;
+    font-size: 1.5rem;
+}
+
+.hero-text p:last-of-type {
+    color: var(--text-primary-light);
+    margin-top: 2rem;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.hero-buttons button {
+    max-width: 15rem;
+    width: 100%;
+}
+
+.hero-buttons button img {
+    width: 0.7rem;
+}
+
+.hero-buttons button:last-of-type {
+    background-color: rgb(255 255 255 / 0);
+    color: var(--surface-higlight);
+    border: var(--surface-higlight) 1px solid;
+}
+
+.hero-card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    perspective: 1200px;
+}
+
+.hero-card {
+    position: relative;
+    height: 40rem;
+    aspect-ratio: 0.625;
+    transform-style: preserve-3d;
+    transition: transform 800ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.hero-card-container:hover .hero-card,
+.hero-card-container:focus-within .hero-card {
+    transform: rotateY(180deg);
+}
+
+.hero-card-face {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.hero-card-front img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-card-back {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2.5rem;
+    color: var(--surface-primary-light);
+    text-align: center;
+    background: linear-gradient(rgb(16 19 28 / 0.88), rgb(16 19 28 / 0.88)),
+    url("../assets/hero_background.png") center / cover;
+    border: 1px solid var(--surface-higlight);
+    transform: rotateY(180deg);
+}
+
+.hero-card-eyebrow,
+.hero-card-hint {
+    color: var(--surface-higlight);
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.hero-card-message {
+    max-width: 16rem;
+    margin: 1.5rem 0;
+    font-family: "Cormorant Garamond", cursive;
+    font-size: 2.5rem;
+    line-height: 1.1;
+}
+
+.hero-card-hint {
+    margin: 0;
+    color: var(--text-primary-light);
+    font-size: 0.7rem;
+}
+
+
+@media screen and (max-width: 1300px) {
+    .hero-card-container {
+        display: none;
+    }
+
+    .hero-text h1 {
+        font-size: 7rem;
+        line-height: 7rem;
+    }
+
+    .hero-container {
+        padding: 2rem 2rem;
+
+    }
+
+}
+
+@media screen and (max-width: 700px) {
+    .hero-text h1 {
+        font-size: 4rem;
+        line-height: 5rem;
+    }
+
+    .hero-text {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
+
+@media screen and (max-width: 400px) {
+    .hero-container {
+        padding: 2rem 1rem;
+
+    }
+
+    .hero-text h1 {
+        font-size: 3rem;
+        line-height: 4rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-buttons button {
+        width: 100%;
+        max-width: 100%;
+        justify-content: center;
+
+    }
+
+    .hero-text h2 {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
 }
