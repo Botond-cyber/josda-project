@@ -1,0 +1,131 @@
+.methods-hero-container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    min-height: calc(100vh - 7rem);
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--surface-primary-dark);
+    height: calc(100vh - 7rem);
+    padding: 2rem 6rem;
+    overflow: hidden;
+}
+
+.methods-hero-image {
+    display: block;
+    height: 40rem;
+    object-fit: contain;
+}
+
+.methods-hero-content {
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.methods-hero-content h1 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    line-height: 10rem;
+    font-size: 9rem;
+    font-weight: lighter;
+}
+
+.methods-hero-content p {
+    color: var(--surface-higlight);
+}
+
+.methods-hero-content h2 {
+    color: var(--text-primary-light);
+    font-weight: lighter;
+    max-width: 50rem;
+    line-height: 2.5rem;
+    font-size: 1.5rem;
+}
+
+.methods-hero-content button {
+    max-width: 15rem;
+    width: 100%;
+}
+
+@media screen and (max-width: 1700px) {
+    .methods-hero-image {
+        position: absolute;
+        right: 0;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .methods-hero-content {
+        backdrop-filter: blur(3px);
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        padding: 0 3rem;
+        text-align: center;
+    }
+
+    .methods-hero-content h1 {
+        font-size: 6rem;
+        line-height: 6rem;
+    }
+
+    .methods-hero-image {
+        display: none;
+    }
+
+
+    .methods-hero-container {
+        background-image: url("../assets/methods_hero_image.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        padding: 2rem 0;
+    }
+}
+
+@media screen and (max-width: 700px) {
+
+
+    .methods-hero-content {
+        padding: 2rem 1rem;
+    }
+
+    .methods-hero-container {
+        max-height: fit-content;
+    }
+
+    .methods-hero-content h1 {
+        font-size: 4rem;
+        line-height: 4rem;
+    }
+
+    .methods-hero-content h2 {
+        font-size: 1.1rem;
+        line-height: 1.6rem;
+    }
+
+    .methods-hero-image {
+        right: 50%;
+        max-width: 90%;
+        max-height: 80%;
+        transform: translate(50%, -50%);
+        opacity: 0.45;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .methods-hero-container {
+    }
+
+    .methods-hero-content h1 {
+        font-size: 3rem;
+        line-height: 3.2rem;
+    }
+
+    .methods-hero-content h2 {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+}
