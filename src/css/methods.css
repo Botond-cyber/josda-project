@@ -1,0 +1,266 @@
+.methods-hero-container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    min-height: calc(100vh - 7rem);
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--surface-primary-dark);
+    height: calc(100vh - 7rem);
+    padding: 2rem 6rem;
+    overflow: hidden;
+}
+
+.methods-hero-image {
+    display: block;
+    height: 40rem;
+    object-fit: contain;
+}
+
+.methods-hero-content {
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.methods-hero-content h1 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    line-height: 10rem;
+    font-size: 9rem;
+    font-weight: lighter;
+}
+
+.methods-hero-content p {
+    color: var(--surface-higlight);
+}
+
+.methods-hero-content h2 {
+    color: var(--text-primary-light);
+    font-weight: lighter;
+    max-width: 50rem;
+    line-height: 2.5rem;
+    font-size: 1.5rem;
+}
+
+.methods-hero-content button {
+    max-width: 15rem;
+    width: 100%;
+}
+
+.methods-card-container {
+    padding: 2rem 6rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.methods-card-container-title h1 {
+    color: var(--surface-primary-dark);
+    font-weight: lighter;
+    font-size: 5rem;
+    margin-bottom: 10px;
+}
+
+.methods-card-container-title p {
+    margin-top: 0;
+    color: var(--text-secondary);
+    font-weight: lighter;
+    font-size: 1.25rem;
+}
+
+.methods-card-container-inner {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 2rem;
+}
+
+.method-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--surface-card);
+    padding: 1rem;
+    height: 40rem;
+    min-height: 40rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: all 0.25s;
+}
+
+.method-card:hover {
+    scale: 1.025;
+}
+
+.method-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 12rem;
+    flex-shrink: 0;
+}
+
+.method-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.method-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    flex: 1;
+    width: 100%;
+}
+
+.method-card-body * {
+    margin: 0;
+}
+
+.method-card-body h2 {
+    font-weight: lighter;
+    font-family: "Cormorant Garamond", cursive;
+    font-size: 2.5rem;
+}
+
+.method-card-body p {
+    font-size: 1.10rem;
+}
+
+.method-card-body p:nth-child(3) {
+    color: var(--surface-higlight);
+    text-transform: uppercase;
+}
+
+.method-card-footer {
+    width: fit-content;
+    min-height: 2rem;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.method-card-footer div {
+    height: 1px;
+    width: 0;
+    border-radius: 2px;
+    transition: width ease-in-out 0.25s;
+    background-color: var(--surface-higlight);
+}
+
+.method-card-footer a {
+    color: var(--surface-higlight);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.method-card-footer:hover div {
+    width: 100%;
+}
+
+@media screen and (max-width: 1700px) {
+    .methods-hero-image {
+        position: absolute;
+        right: 0;
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .methods-card-container-inner {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .methods-card-container {
+        padding: 2rem;
+    }
+
+
+    .methods-hero-content {
+        backdrop-filter: blur(3px);
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        padding: 0 3rem;
+        text-align: center;
+    }
+
+    .methods-hero-content h1 {
+        font-size: 6rem;
+        line-height: 6rem;
+    }
+
+    .methods-hero-image {
+        display: none;
+    }
+
+
+    .methods-hero-container {
+        background-image: url("../assets/methods_hero_image.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        padding: 2rem 0;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .methods-card-container p {
+        text-align: center;
+    }
+
+    .methods-card-container {
+        padding: 2rem 1rem;
+    }
+
+    .methods-card-container-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .methods-hero-content {
+        padding: 2rem 1rem;
+    }
+
+    .methods-hero-container {
+        max-height: fit-content;
+    }
+
+    .methods-hero-content h1, .methods-card-container-title h1 {
+        text-align: center;
+        font-size: 4rem;
+        line-height: 4rem;
+    }
+
+    .methods-hero-content h2 {
+        font-size: 1.1rem;
+        line-height: 1.6rem;
+    }
+
+    .methods-hero-image {
+        right: 50%;
+        max-width: 90%;
+        max-height: 80%;
+        transform: translate(50%, -50%);
+        opacity: 0.45;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .methods-hero-container {
+    }
+
+    .methods-hero-content h1, .methods-card-container-title h1 {
+        font-size: 3rem;
+        line-height: 3.2rem;
+    }
+
+    .methods-hero-content h2, .methods-card-container-title p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+}
