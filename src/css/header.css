@@ -1,6 +1,6 @@
 @import "@fontsource/cormorant-garamond";
 @import "@fontsource/cookie";
-
+/*TODO: make hamburger manu for mobile*/
 header {
     display: flex;
     flex-direction: row;
@@ -105,4 +105,73 @@ header {
 
 .sign-in-btn:hover {
     scale: 1.1;
+}
+
+@media screen and (max-width: 1200px) {
+    header {
+        height: auto;
+        min-height: 7rem;
+        padding: 1rem 2rem;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.75rem 1.25rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    header {
+        justify-content: space-between;
+        padding: 1rem;
+    }
+
+    .header-logo {
+        gap: 0.5rem;
+        font-size: 1.75rem;
+    }
+
+    .header-logo img {
+        height: 1.75rem;
+    }
+
+    .login-btn-container {
+        gap: 0.5rem;
+    }
+
+    .begin-btn {
+        padding: 0.75rem 1rem;
+        font-size: 0.875rem;
+    }
+
+    .nav {
+        gap: 0.6rem 1rem;
+        font-size: 0.875rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .login-btn-container {
+        order: 3;
+    }
+
+    header {
+        flex-direction: column;
+    }
+
+}
+
+@media screen and (max-width: 400px) {
+    .header-logo p   {
+        display: none;
+    }
+
+    .sign-in-btn {
+        font-size: 0.875rem;
+    }
 }
