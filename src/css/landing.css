@@ -363,12 +363,149 @@ header {
 
 }
 
+.ask-oracle-container {
+    height: fit-content;
+    min-height: 100vh;
+    width: 100%;
+    background-color: var(--surface-primary-dark);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem 6rem;
+    color: var(--text-primary-light);
+    position:relative;
+    flex-wrap: wrap;
+}
+.ask-oracle-text {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.ask-oracle-text h2 {
+    color: var(--surface-primary-light);
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    line-height: 6rem;
+    font-size: 6rem;
+    font-weight: lighter;
+    font-family: "Cormorant Garamond", cursive;
+}
+
+.ask-oracle-text p:first-of-type {
+    color: var(--surface-higlight);
+    text-transform: uppercase;
+    margin-top: 6rem;
+}
+
+.ask-oracle-text h3 {
+    color: var(--text-secondary);
+    font-weight: lighter;
+    max-width: fit-content;
+    line-height: 2.5rem;
+    font-size: 1.5rem;
+}
+
+.ask-oracle-input {
+    border: 2px solid var(--text-secondary);
+    padding: 1rem;
+    border-radius: 1rem;
+    width: 45%;
+    height: 25vh;
+    background-color: var(--surface-card);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5rem;
+}
+
+.ask-oracle-input #input-title p{
+    text-transform: uppercase;
+    color: var(--surface-higlight);
+    padding-bottom: 1rem;
+}
+.ask-oracle-input #input-sec-text p, .input-sec-counter p {
+    color: var(--text-secondary);
+    padding-top: 1rem;
+
+}
+
+.ask-oracle-input input, input::placeholder{
+    background-color: var(--surface-card);
+    border: 0;
+    color: var(--surface-primary-light);
+    width: 100%;
+    height: 7vh;
+    font-size: x-large;
+    font-family: "Inter";
+}
+.input-sec-counter{
+    display: flex;
+    justify-content: space-between;
+}
+
+.ask-oracle-input-cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+}
+.ask-oracle-cards {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.ask-oracle-card img {
+    width: 200px;
+}
+
+.methods-container {
+    height: fit-content;
+    min-height: 100vh;
+    width: 100%;
+    background-color: var(--surface-primary-dark);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem 6rem;
+    color: var(--text-primary-light);
+    position:relative;
+    flex-wrap: wrap;
+}
+.methods-text {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.methods-text h2 {
+    color: var(--surface-primary-light);
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    line-height: 6rem;
+    font-size: 6rem;
+    font-weight: lighter;
+    font-family: "Cormorant Garamond", cursive;
+}
+
+.methods-text p:first-of-type {
+    color: var(--surface-higlight);
+    text-transform: uppercase;
+    margin-top: 6rem;
+}
+
+.methods-card {
+    border: 3px solid red;
+}
 @keyframes link-bg-change {
     
   0% {background-color: var(--surface-primary-light); color: var(--surface-primary-dark);}
   50% {background-color: var(--surface-primary-dark); color: var(--surface-primary-light);}
   100% {background-color: var(--surface-primary-light); color: var(--surface-primary-dark);}
 }
+
+
 
 @media screen and (max-width: 1300px) {
     .hero-card-container {
@@ -383,6 +520,12 @@ header {
     .hero-container {
         padding: 2rem 2rem;
 
+    }
+    .ask-oracle-input {
+        width: 100%;
+    }
+    .ask-oracle-cards {
+        width: 100%;
     }
 
 }
