@@ -5,9 +5,11 @@
 :root {
     --surface-primary-light: #F5F0E7;
     --surface-primary-dark: #10131C;
+    --surface-card: #181A24;
     --surface-higlight: #C8A96B;
     --text-primary-light: #BEB9B4;
     --text-secondary: #625D58;
+    
 }
 
 
@@ -25,7 +27,7 @@ body {
     padding: 0;
 }
 
-#container {
+.container {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -33,4 +35,3 @@ body {
     color: var(--surface-primary-light);
     background-color: var(--surface-primary-light);
 }
-

@@ -1,5 +1,6 @@
 import { defineConfig } from "vite";
 import { HtmlValidate } from "html-validate";
+import { resolve } from "node:path";
 
 const htmlValidator = new HtmlValidate({
   extends: ["html-validate:recommended"],
@@ -48,6 +49,14 @@ const base = process.env.GITHUB_ACTIONS && repository ? `/${repository}/` : "/";
 export default defineConfig({
   base,
   plugins: [htmlValidationPlugin()],
+  build: {
+    rollupOptions: {
+      input: {
+        main: resolve("index.html"),
+        methods: resolve("src/pages/methods.html"),
+      },
+    },
+  },
   server: {
     port: 3000,
     host: true,
