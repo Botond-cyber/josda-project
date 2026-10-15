@@ -620,6 +620,289 @@
     font-size: 0.75rem;
 }
 
+/* Motion layer */
+@keyframes methods-fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(1.5rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes methods-fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes methods-float {
+    0%, 100% {
+        transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+
+    50% {
+        transform: translate3d(0, -0.75rem, 0) rotate(1deg);
+    }
+}
+
+@keyframes methods-drift {
+    0%, 100% {
+        transform: translate3d(0, 0, 0) rotate(-1deg);
+    }
+
+    50% {
+        transform: translate3d(0.4rem, -0.5rem, 0) rotate(1deg);
+    }
+}
+
+@keyframes methods-shimmer {
+    from {
+        transform: translateX(-130%);
+    }
+
+    to {
+        transform: translateX(130%);
+    }
+}
+
+.methods-hero-container::after {
+    position: absolute;
+    top: -20%;
+    left: -30%;
+    width: 35%;
+    height: 140%;
+    content: "";
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgb(200 169 107 / 10%),
+        transparent
+    );
+    pointer-events: none;
+    transform: translateX(-130%) skewX(-18deg);
+    animation: methods-shimmer 9s ease-in-out 1.5s infinite;
+}
+
+.methods-hero-content > * {
+    opacity: 0;
+    animation: methods-fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.methods-hero-content > :nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.methods-hero-content > :nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.methods-hero-content > :nth-child(3) {
+    animation-delay: 0.35s;
+}
+
+.methods-hero-content > :nth-child(4) {
+    animation-delay: 0.5s;
+}
+
+.methods-hero-image {
+    animation: methods-float 7s ease-in-out 1s infinite;
+}
+
+.methods-card-container-title {
+    animation: methods-fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.method-card {
+    position: relative;
+    isolation: isolate;
+    border: 1px solid transparent;
+    transition:
+        transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
+    animation: methods-fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.method-card::before {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    content: "";
+    border-radius: inherit;
+    background: linear-gradient(135deg, rgb(200 169 107 / 14%), transparent 42%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.method-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.method-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.method-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.method-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.method-card:hover,
+.method-card:focus-within {
+    scale: 1.025;
+    border-color: rgb(200 169 107 / 45%);
+    box-shadow: 0 1.25rem 2.5rem rgb(16 19 28 / 16%);
+}
+
+.method-card:hover::before,
+.method-card:focus-within::before {
+    opacity: 1;
+}
+
+.method-card-image {
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.method-card:hover .method-card-image,
+.method-card:focus-within .method-card-image {
+    transform: translateY(-0.5rem) scale(1.06) rotate(2deg);
+}
+
+.method-card-footer div {
+    transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.method-card-footer a:focus-visible {
+    outline: 1px solid var(--surface-higlight);
+    outline-offset: 0.35rem;
+}
+
+.method-detail-container {
+    position: relative;
+}
+
+.method-detail-title,
+.method-detail-content,
+.method-detail-card-container {
+    animation: methods-fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.method-detail-title {
+    animation-delay: 0.1s;
+}
+
+.method-detail-content {
+    animation-delay: 0.25s;
+}
+
+.method-detail-card-container {
+    animation-delay: 0.4s;
+}
+
+.method-image {
+    animation: methods-drift 8s ease-in-out infinite;
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.method-detail-container:hover .method-image {
+    filter: drop-shadow(0 1rem 1.25rem rgb(16 19 28 / 14%));
+}
+
+.method-detail-card,
+.method-detail-card-moon,
+.method-detail-card-ching {
+    transition:
+        transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.35s ease;
+}
+
+.method-detail-card:hover,
+.method-detail-card-moon:hover,
+.method-detail-card-ching:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: 0 1rem 2rem rgb(16 19 28 / 12%);
+}
+
+.method-detail-card img,
+.method-detail-card-moon img,
+.method-detail-card-ching img {
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.method-detail-card:hover img,
+.method-detail-card-moon:hover img,
+.method-detail-card-ching:hover img {
+    transform: scale(1.06);
+}
+
+.method-comparison {
+    animation: methods-fade-in 1s ease both;
+}
+
+.method-comparison-table tbody tr {
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.method-comparison-table tbody tr:hover {
+    background-color: rgb(200 169 107 / 12%);
+}
+
+.begin-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.begin-section::before {
+    position: absolute;
+    width: 22rem;
+    height: 22rem;
+    content: "";
+    border: 1px solid rgb(200 169 107 / 18%);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: methods-float 8s ease-in-out infinite;
+}
+
+.begin-section > * {
+    position: relative;
+    z-index: 1;
+    animation: methods-fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.begin-section > :nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.begin-section > :nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.begin-section > :nth-child(3) {
+    animation-delay: 0.35s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
 @media screen and (max-width: 1000px) {
     .method-detail-content-container {
         flex-direction: column;
