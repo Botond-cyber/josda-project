@@ -681,10 +681,10 @@
     height: 140%;
     content: "";
     background: linear-gradient(
-        90deg,
-        transparent,
-        rgb(200 169 107 / 10%),
-        transparent
+            90deg,
+            transparent,
+            rgb(200 169 107 / 10%),
+            transparent
     );
     pointer-events: none;
     transform: translateX(-130%) skewX(-18deg);
@@ -724,10 +724,9 @@
     position: relative;
     isolation: isolate;
     border: 1px solid transparent;
-    transition:
-        transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
-        box-shadow 0.4s ease,
-        border-color 0.4s ease;
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
     animation: methods-fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
@@ -822,9 +821,8 @@
 .method-detail-card,
 .method-detail-card-moon,
 .method-detail-card-ching {
-    transition:
-        transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
-        box-shadow 0.35s ease;
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s ease;
 }
 
 .method-detail-card:hover,
@@ -916,9 +914,6 @@
 }
 
 @media screen and (max-width: 700px) {
-    .methods-card-container p {
-        text-align: center;
-    }
 
     .methods-card-container {
         padding: 2rem 1rem;
@@ -980,8 +975,9 @@
         font-size: 2.75rem;
     }
 
+
     .method-detail-title h1 {
-        font-size: 4rem;
+        font-size: clamp(1.5rem, 12vw, 4rem);
     }
 
     .method-image {
