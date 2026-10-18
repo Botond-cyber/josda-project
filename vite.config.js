@@ -54,6 +54,7 @@ export default defineConfig({
       input: {
         main: resolve("index.html"),
         methods: resolve("src/pages/methods.html"),
+        pricing: resolve("src/pages/pricing.html"),
       },
     },
   },
