@@ -551,7 +551,28 @@ body p {
 }
 .oracle-card a {
     color: var(--surface-higlight);
+    display: inline-block;
+    position: relative;
     font-family: "Inter";
+    text-decoration: none;
+}
+
+.oracle-card a::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -0.2rem;
+    left: 0;
+    height: 1px;
+    background-color: var(--surface-higlight);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease-in-out;
+}
+
+.oracle-card a:hover::after,
+.oracle-card a:focus-visible::after {
+    transform: scaleX(1);
 }
 .oracle-card-text {
     padding: 1rem;
