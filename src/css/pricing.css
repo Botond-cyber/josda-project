@@ -382,8 +382,23 @@ td {
     }
 }
 
+@media screen and (max-width: 800px) {
+    .pricing-moon {
+        position: absolute;
+    }
+
+    .pricing-hero {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .pricing-hero-content {
+        z-index: 2;
+        backdrop-filter: blur(10px);
+    }
+}
+
 @media screen and (max-width: 600px) {
-    .pricing-hero,
     .plans,
     .readings,
     .comparison,
@@ -392,8 +407,12 @@ td {
     }
 
     .pricing-hero {
-        min-height: 38rem;
-        align-items: flex-start;
+        padding: 0;
+    }
+
+    .pricing-hero-content {
+        min-height: 25rem;
+        padding: 3rem 1rem;
     }
 
     .pricing-hero-content h1 {
@@ -404,13 +423,6 @@ td {
     .pricing-hero-content .hero-lead {
         font-size: 1.1rem;
         line-height: 1.5rem;
-    }
-
-    .pricing-moon {
-        position: absolute;
-        right: 1rem;
-        width: 12rem;
-        margin-top: 16rem;
     }
 
     .section-heading h2,
