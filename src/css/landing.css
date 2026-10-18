@@ -1,6 +1,9 @@
 @import "@fontsource/cormorant-garamond";
 @import "@fontsource/cookie";
 
+body p {
+    font-family: "Inter";
+}
 
 .hero-container {
     height: calc(100vh - 7rem);
@@ -207,6 +210,7 @@
     max-width: 50rem;
     line-height: 2.5rem;
     font-size: 1.5rem;
+    font-family: "Inter";
 }
 
 .calling-cards {
@@ -258,7 +262,7 @@
 
 .ask-oracle-container {
     height: fit-content;
-    min-height: 100vh;
+
     width: 100%;
     background-color: var(--surface-primary-dark);
     display: flex;
@@ -268,6 +272,7 @@
     color: var(--text-primary-light);
     position:relative;
     flex-wrap: wrap;
+    padding-bottom: 3rem;
 }
 .ask-oracle-text {
     display: flex;
@@ -303,12 +308,12 @@
     border: 2px solid var(--text-secondary);
     padding: 1rem;
     border-radius: 1rem;
-    width: 45%;
+    width: 100%;
     height: 25vh;
     background-color: var(--surface-card);
     display: flex;
     flex-direction: column;
-    margin-bottom: 5rem;
+    margin-bottom: 1rem;
 }
 
 .ask-oracle-input #input-title p{
@@ -340,57 +345,124 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin-top: 3rem;
+    margin-top: 1rem;
+    width: 100%;
 }
 .ask-oracle-cards {
     width: 50%;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    padding-left: 3rem;
+    margin: auto;
+    justify-content: space-around;
 }
 .ask-oracle-card img {
-    width: 200px;
+    width: 110%;
 }
 
-.methods-container {
-    height: fit-content;
-    min-height: 100vh;
-    width: 100%;
+.ask-btn {
+    background-color: var(--surface-higlight);
+    border: none;
+    color: var(--surface-primary-dark);
+    padding: 1rem 1.5rem;
+    border-radius: 0.6rem;
+    font-size: 1rem;
+    font-family: "Inter", sans-serif;
+    display: flex;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.bg-dark {
+    background-color: var(--surface-card);
+    color: var(--surface-primary-light);
+    border: 1px solid var(--grey-stroke);
+}
+
+.ask-btn:hover {
+    scale: 1.04;
+}
+.ask-oracle-input-btn {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.ask-oracle-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.method-card {
+    background-color: var(--surface-card);
+    color: var(--surface-primary-light);
+}
+.methods-card-container {
     background-color: var(--surface-primary-dark);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 2rem 6rem;
-    color: var(--text-primary-light);
-    position:relative;
-    flex-wrap: wrap;
-}
-.methods-text {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+    padding-top: 5rem;
 }
 
-.methods-text h2 {
+.methods-card-container-title h1 {
     color: var(--surface-primary-light);
     margin-top: 0;
-    margin-bottom: 0.5rem;
-    line-height: 6rem;
-    font-size: 6rem;
-    font-weight: lighter;
-    font-family: "Cormorant Garamond", cursive;
+    padding-bottom: 1rem;
 }
-
-.methods-text p:first-of-type {
+.methods-card-container-title p {
     color: var(--surface-higlight);
     text-transform: uppercase;
-    margin-top: 6rem;
+
+}
+.methods-card-container-title {
+    text-align: start;
+}
+.methods-btn {
+    width: fit-content;
+    margin: 3rem 0 4rem 0;
+}
+.method-card-footer {
+    font-family: "Inter";
 }
 
-.methods-card {
-    border: 3px solid red;
+.oracle-card {
+    background-color: var(--surface-primary-dark);
+    border-radius: 15px;
+    border: 2px solid var(--surface-primary-dark);
 }
+
+.oracle-card h4{
+    color: var(--surface-primary-light);
+
+    text-transform: none;
+}
+.oracle-card h5 {
+    text-transform: uppercase;
+    color: var(--surface-higlight);
+    font-family: "Inter";
+    font-weight: 100;
+
+}
+.oracle-card p {
+
+    color: var(--surface-primary-light);
+}
+.oracle-card a {
+    color: var(--surface-higlight);
+    font-family: "Inter";
+}
+.oracle-card-text {
+    padding: 1rem;
+}
+.oracle-btn .ask-btn {
+    margin: auto;
+    margin-top: 2rem;
+}
+
+
 @keyframes link-bg-change {
     
   0% {background-color: var(--surface-primary-light); color: var(--surface-primary-dark);}
@@ -398,6 +470,11 @@
   100% {background-color: var(--surface-primary-light); color: var(--surface-primary-dark);}
 }
 
+@media screen and (max-width: 1600px){
+    .ask-oracle-cards img {
+        width: 95%;
+    }
+}
 
 
 @media screen and (max-width: 1300px) {
@@ -414,16 +491,70 @@
         padding: 2rem 2rem;
 
     }
-    .ask-oracle-input {
+    .ask-oracle-input-btn {
         width: 100%;
+        padding-bottom: 4rem;
     }
-    .ask-oracle-cards {
+    .ask-oracle-cards{
+        margin: 0;
         width: 100%;
+        padding: 0;
+         justify-content: space-evenly;
+    }
+    .ask-oracle-card img{
+        width: 13rem;
+       
     }
 
 }
+@media screen and (max-width: 900px){
+    .ask-oracle-cards {
+        margin: 0;
+        width: 100%;
+        padding: 0;
+        justify-content: space-between;
+    }
+    .ask-oracle-card img{
+        width: 10rem;
+       
+    }
+}
 
 @media screen and (max-width: 700px) {
+
+    .calling-card {
+
+    min-width: 15rem;
+    margin: auto;
+    padding: 0;
+    }
+    .calling-container {
+        padding: 0;
+        padding-bottom: 2rem;
+    }
+    .calling-card{
+        width: 20rem;
+    }
+
+    .calling-text, .ask-oracle-text {
+        padding: 0 2rem 0 2rem;
+        text-align: start;
+    }
+    .calling-text h2, .ask-oracle-text h2, .methods-card-container-title h1 {
+        font-size: 4rem;
+        line-height: 4rem;
+        text-align: start;
+    }
+    .calling-text h3, .ask-oracle-text h3{
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+    .calling-text p:first-of-type, .ask-oracle-text p:first-of-type, .methods-card-container-title p {
+        margin-top: 2rem;
+        text-align: start;
+    }
+    
+
     .hero-text h1 {
         font-size: 4rem;
         line-height: 5rem;
@@ -439,6 +570,27 @@
         flex-direction: column;
         align-items: center;
     }
+
+    .ask-oracle-cards {
+        display: none;
+    }
+    .ask-oracle-input-btn {
+        padding-bottom: 0;
+    }
+    .methods-card-container, .ask-oracle-container {
+        padding: 3rem;
+    }
+    .ask-oracle-buttons {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+    }
+
+    .methods-btn {
+        margin: 3rem auto 2rem auto;
+    }
+
 
 }
 
@@ -469,4 +621,28 @@
         font-size: 1rem;
         line-height: 1.5rem;
     }
+
+    .calling-card{
+        width: 18rem;
+    }
+
+    .ask-oracle-container{
+        padding: 0;
+    }
+
+    .ask-oracle-input-btn{
+        width: 100%;
+    }
+
+     .ask-oracle-buttons {
+        display: flex;
+        flex-direction: column;
+        width: 75%;
+        margin: auto;
+     }
+     .ask-oracle-input {
+        width: 80%;
+        margin: auto;
+        margin-bottom: 2rem;
+     }
 }
