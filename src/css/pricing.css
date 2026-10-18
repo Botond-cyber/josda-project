@@ -231,9 +231,9 @@
     line-height: 1.5;
 }
 
-.reading-card footer {
+.reading-card div {
     display: flex;
-    align-items: end;
+    align-items: center;
     justify-content: space-between;
     margin-top: 1rem;
     padding-top: 1rem;
