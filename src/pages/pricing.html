@@ -278,40 +278,51 @@
       <p>A little clarity about the experience, your readings and your ritual.</p></div>
     <div class="faq-list">
       <details open>
-        <summary>What is Dawn Oracle?<span>−</span></summary>
+        <summary>What is Dawn Oracle?<span aria-hidden="true">−</span></summary>
         <p>Dawn Oracle is a quiet space for reflection through Tarot, Moon Oracle, I Ching and Numerology. Ancient
           symbols become thoughtful, personalized interpretation, helping you see your question from another angle.</p>
       </details>
       <details>
-        <summary>Is this fortune telling?<span>+</span></summary>
+        <summary>Is this fortune telling?<span aria-hidden="true">+</span></summary>
         <p>We don't tell you your future. We help you see it differently. Readings are exploratory reflections, not
           fixed predictions or promises about what will happen.</p></details>
       <details>
-        <summary>How do the readings work?<span>+</span></summary>
+        <summary>How do the readings work?<span aria-hidden="true">+</span></summary>
         <p>Bring a question, choose an Oracle and a method, then draw your cards or explore the symbols. The
           interpretation connects those symbols to your question.</p></details>
       <details>
-        <summary>Can I ask any question?<span>+</span></summary>
+        <summary>Can I ask any question?<span aria-hidden="true">+</span></summary>
         <p>You can explore love, life, relationships, career, choices and personal growth. Open questions invite richer
           reflection.</p></details>
       <details>
-        <summary>How accurate are the readings?<span>+</span></summary>
+        <summary>How accurate are the readings?<span aria-hidden="true">+</span></summary>
         <p>A reading offers a perspective, not a measurable forecast. Its value lies in the patterns you notice and the
           questions it opens.</p></details>
       <details>
-        <summary>Can I cancel anytime?<span>+</span></summary>
+        <summary>Can I cancel anytime?<span aria-hidden="true">+</span></summary>
         <p>Yes. You can cancel your subscription at any time. Your plan remains available until the end of your current
           billing period.</p></details>
       <details>
-        <summary>Do you save my readings?<span>+</span></summary>
+        <summary>Do you save my readings?<span aria-hidden="true">+</span></summary>
         <p>First Light includes limited reading history. Moonlight includes reading history and a personal journal.</p>
       </details>
       <details>
-        <summary>What is the difference between the methods?<span>+</span></summary>
+        <summary>What is the difference between the methods?<span aria-hidden="true">+</span></summary>
         <p>Tarot explores archetypes and choices, Moon Oracle listens to emotion and cycles, I Ching offers perspective
           on change and balance, and Numerology explores symbolic patterns.</p></details>
     </div>
   </div>
+  <script>
+    document.querySelectorAll('.faq-list details').forEach((detail) => {
+      const indicator = detail.querySelector('summary span');
+      const updateIndicator = () => {
+        indicator.textContent = detail.open ? '−' : '+';
+      };
+
+      detail.addEventListener('toggle', updateIndicator);
+      updateIndicator();
+    });
+  </script>
 
   <footer>
     <div class="footer-main">
