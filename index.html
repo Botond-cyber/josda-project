@@ -6,166 +6,516 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="/src/css/main.css" />
+  <link rel="stylesheet" href="src/css/methods.css">
   <link rel="stylesheet" href="src/css/landing.css">
   <link rel="stylesheet" href="src/css/header.css">
+  <link rel="stylesheet" href="src/css/footer.css">
+
   <title>josda-project</title>
 </head>
 
 <body>
-<div class="container">
-  <header>
-    <div class="header-logo">
-      <img src="/src/assets/dawn-monogram.svg" alt="logo" />
-      <p>DAWN ORACLE</p>
+  <div class="container">
+    <header>
+      <div class="header-logo">
+        <img src="/src/assets/dawn-monogram.svg" alt="logo" />
+        <p>DAWN ORACLE</p>
+      </div>
+
+      <div class="nav">
+        <div class="nav-item"><a href="#">Readings</a>
+          <div class="nav-underline"></div>
+        </div>
+        <div class="nav-item"><a href="src/pages/methods.html">Methods</a>
+          <div class="nav-underline"></div>
+        </div>
+        <div class="nav-item"><a href="#">Our Oracles</a>
+          <div class="nav-underline"></div>
+        </div>
+        <div class="nav-item"><a href="#">Pricing</a>
+          <div class="nav-underline"></div>
+        </div>
+        <div class="nav-item"><a href="#">Journal</a>
+          <div class="nav-underline"></div>
+        </div>
+        <div class="nav-item"><a href="#">About</a>
+          <div class="nav-underline"></div>
+        </div>
+      </div>
+
+      <div class="login-btn-container">
+        <div class="sign-in-btn">Sign In</div>
+        <button class="begin-btn" type="button">
+          <span>Begin Reading</span>
+          <img src="src/assets/arrow.svg" alt="arrow icon" />
+        </button>
+      </div>
+    </header>
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <p>Ancient wisdom. A new perspective.</p>
+          <h1>Find clarity in the unknown.</h1>
+          <h2>Ancient symbols. Modern reflection. A quiet space to ask the questions that matter.</h2>
+          <div class="hero-buttons">
+            <button class="begin-btn" type="button">
+              <span>Begin Reading</span>
+              <img src="src/assets/arrow.svg" alt="arrow icon" />
+            </button>
+            <button class="begin-btn" type="button">
+              <span>Explore the Oracles</span>
+              <img src="src/assets/arrow_higlight.svg" alt="arrow icon" />
+            </button>
+          </div>
+          <p>No predictions carved in stone. Just a different way of seeing.</p>
+        </div>
+        <div class="hero-card-container">
+          <div class="hero-card">
+            <div class="hero-card-face hero-card-front">
+              <img src="src/assets/hero_card.png" alt="Dawn Oracle card" />
+            </div>
+            <div class="hero-card-face hero-card-back">
+              <p class="hero-card-eyebrow">A quiet invitation</p>
+              <p class="hero-card-message">The answer is already becoming clear.</p>
+              <p class="hero-card-hint">Turn inward. Begin where you are.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-footer">
+        <p>01 / Enter the sanctuary</p>
+        <p>Take a breath. Begin again. ↓</p>
+      </div>
+
     </div>
 
-    <div class="nav">
-      <div class="nav-item"><a href="#">Readings</a>
-        <div class="nav-underline"></div>
+  </div>
+  <div class="calling-container">
+    <div class="calling-text">
+      <p>Follow the question</p>
+      <h2>What is calling you</h2>
+      <h3>Bring the question that has been quietly sitting with you.</h3>
+    </div>
+
+    <div class="calling-cards">
+      <div class="calling-card"><img src="src/assets/editorial_artwork.png" alt="">
+        <h4>Love</h4>
+        <p>Explore connection, attraction, boundaries and emotional patterns.</p><a href="">Explore ↗</a>
       </div>
-      <div class="nav-item"><a href="src/pages/methods.html">Methods</a>
-        <div class="nav-underline"></div>
+      <div class="calling-card"><img src="src/assets/editorial_artwork2.png" alt="">
+        <h4>Life</h4>
+        <p>Find perspective when you're standing between what was and what comes next.</p><a href="">Explore ↗</a>
       </div>
-      <div class="nav-item"><a href="#">Our Oracles</a>
-        <div class="nav-underline"></div>
+      <div class="calling-card"><img src="src/assets/Editorial_artwork3.png" alt="">
+        <h4>Career</h4>
+        <p>Explore ambition, decisions, opportunities and your next direction.</p><a href="">Explore ↗</a>
       </div>
-      <div class="nav-item"><a href="#">Pricing</a>
-        <div class="nav-underline"></div>
+    </div>
+  </div>
+  <div class="ask-oracle-container">
+    <div class="ask-oracle-text">
+      <p>A moment, just for you</p>
+      <h2>Ask the Oracle</h2>
+      <h3>Some questions don't need a simple answer. They need another perspective.</h3>
+    </div>
+    <div class="ask-oracle-input-cards">
+      <div class="ask-oracle-input-btn">
+        <div class="ask-oracle-input">
+          <div id="input-title">
+            <p>What is on your heart?</p>
+          </div>
+          <input type="text" name="assdas" id="asdsa" placeholder="I’m standing at a crossroads in my career…">
+          <div class="input-sec-counter">
+            <div id="input-sec-text">
+              <p>Bring what is on your mind.</p>
+            </div>
+            <div id="input-char-count">
+              <p>insert character counter hero-card-eyebrow</p>
+            </div>
+          </div>
+        </div>
+        <div class="ask-oracle-buttons">
+          <button class="ask-btn bg-dark" type="button">
+            <span>One Card</span>
+          </button>
+          <button class="ask-btn" type="button">
+            <span>Three cards</span>
+          </button>
+          <button class="ask-btn bg-dark" type="button">
+            <span>Five Cards</span>
+          </button>
+          <button class="ask-btn" type="button">
+            <span>Draw my cards </span>
+            <img src="src/assets/arrow.svg" alt="arrow icon" />
+          </button>
+        </div>
       </div>
-      <div class="nav-item"><a href="#">Journal</a>
-        <div class="nav-underline"></div>
-      </div>
-      <div class="nav-item"><a href="#">About</a>
-        <div class="nav-underline"></div>
+      <div class="ask-oracle-cards">
+        <div class="ask-oracle-card" tabindex="0">
+          <div class="ask-oracle-card-inner">
+            <div class="ask-oracle-card-face ask-oracle-card-front">
+              <img src="src/assets/Oracle Card · Back.png" alt="">
+            </div>
+            <div class="ask-oracle-card-face ask-oracle-card-back">
+              <p class="ask-oracle-card-eyebrow">A note for you</p>
+              <p class="ask-oracle-card-message">You already carry more wisdom than you think.</p>
+              <p class="ask-oracle-card-hint">Take a moment to listen.</p>
+            </div>
+          </div>
+        </div>
+        <div class="ask-oracle-card" tabindex="0">
+          <div class="ask-oracle-card-inner">
+            <div class="ask-oracle-card-face ask-oracle-card-front">
+              <img src="src/assets/Oracle Card · Back.png" alt="">
+            </div>
+            <div class="ask-oracle-card-face ask-oracle-card-back">
+              <p class="ask-oracle-card-eyebrow">A note for you</p>
+              <p class="ask-oracle-card-message">You do not need the whole map to take the next step.</p>
+              <p class="ask-oracle-card-hint">Begin where you are.</p>
+            </div>
+          </div>
+        </div>
+        <div class="ask-oracle-card" tabindex="0">
+          <div class="ask-oracle-card-inner">
+            <div class="ask-oracle-card-face ask-oracle-card-front">
+              <img src="src/assets/Oracle Card · Back.png" alt="">
+            </div>
+            <div class="ask-oracle-card-face ask-oracle-card-back">
+              <p class="ask-oracle-card-eyebrow">A note for you</p>
+              <p class="ask-oracle-card-message">What is changing may also be making room for you.</p>
+              <p class="ask-oracle-card-hint">Stay open to what comes next.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="login-btn-container">
-      <div class="sign-in-btn">Sign In</div>
-      <button class="begin-btn" type="button">
-        <span>Begin Reading</span>
+  </div>
+  <div class="methods-card-container">
+    <div class="methods-card-container-title">
+      <p>Four languages of reflection</p>
+      <h1>Ancient methods. A modern ritual.</h1>
+
+    </div>
+    <div class="methods-card-container-inner">
+      <div class="method-card">
+        <div class="method-card-header">
+          <img src="src/assets/tarot.png" class="method-card-image" alt="tarot" />
+        </div>
+        <div class="method-card-body">
+          <h2>Tarot</h2>
+          <p>Tarot uses archetypal imagery to explore patterns, relationships, choices and possibilities.</p>
+          <p>Best for</p>
+          <p>Clarity · Relationships · Choices · Archetypes</p>
+        </div>
+        <div class="method-card-footer">
+          <a>Begin a Tarot Reading ↗</a>
+          <div></div>
+        </div>
+      </div>
+      <div class="method-card">
+        <div class="method-card-header">
+          <img src="src/assets/moon.png" class="method-card-image" alt="moon" />
+        </div>
+        <div class="method-card-body">
+          <h2>Moon Oracle</h2>
+          <p>A contemplative method centered around emotion, intuition, cycles and inner awareness.</p>
+          <p>Best for</p>
+          <p>Emotion · Intuition · Cycles · Inner reflection</p>
+        </div>
+        <div class="method-card-footer">
+          <a>Enter the Moon Oracle ↗</a>
+          <div></div>
+        </div>
+      </div>
+      <div class="method-card">
+        <div class="method-card-header">
+          <img src="src/assets/ching.png" class="method-card-image" alt="I Ching" />
+        </div>
+        <div class="method-card-body">
+          <h2>I Ching</h2>
+          <p>The I Ching offers a contemplative framework for understanding change, balance, movement and decisions.</p>
+          <p>Best for</p>
+          <p>Change · Decisions · Balance · Direction</p>
+        </div>
+        <div class="method-card-footer">
+          <a>Consult the I Ching ↗</a>
+          <div></div>
+        </div>
+      </div>
+      <div class="method-card">
+        <div class="method-card-header">
+          <img src="src/assets/numerology.png" class="method-card-image" alt="numerology" />
+        </div>
+        <div class="method-card-body">
+          <h2>Numerology</h2>
+          <p>Numerology explores symbolic patterns connected to your birthdate and name.</p>
+          <p>Best for</p>
+          <p>Identity · Patterns · Life paths · Personal timing</p>
+        </div>
+        <div class="method-card-footer">
+          <a>Calculate My Numbers ↗</a>
+          <div></div>
+        </div>
+      </div>
+
+
+    </div>
+    <div class="methods-btn">
+      <button class="ask-btn" type="button" href="src/pages/methods.html">
+        <span>Meet Our Oracles ↗</span>
+
+      </button>
+    </div>
+  </div>
+  <div class="calling-container">
+    <div class="calling-text">
+      <p>A voice to meet you</p>
+      <h2>Meet the Oracles</h2>
+      <h3>Every question has a different doorway.</h3>
+    </div>
+
+    <div class="calling-cards">
+      <div class="calling-card oracle-card"><img src="src/assets/oracle1.png" alt="">
+        <div class="oracle-card-text">
+          <h5>Tarot</h5>
+          <h4>The Seer</h4>
+          <p>Tarot &amp; archetypal readings</p><a href="">Ask The Seer ↗</a>
+        </div>
+      </div>
+      <div class="calling-card oracle-card"><img src="src/assets/oracle2.png" alt="">
+        <div class="oracle-card-text">
+          <h5>Moon oracle</h5>
+          <h4>The Moonkeeper</h4>
+          <p>Cycles, intuition &amp; emotional clarity</p><a href="">Ask The Moonkeeper ↗</a>
+        </div>
+      </div>
+      <div class="calling-card oracle-card"><img src="src/assets/oracle3.png" alt="">
+        <div class="oracle-card-text">
+          <h5>I Ching</h5>
+          <h4>The Sage</h4>
+          <p>Ancient wisdom &amp; the I Ching</p><a href="">Ask The Sage ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="oracle-btn">
+      <button class="ask-btn" type="button" href="src/pages/methods.html">
+        <span>Meet Our Oracles</span>
         <img src="src/assets/arrow.svg" alt="arrow icon" />
       </button>
     </div>
-  </header>
-  <div class="hero-container">
-    <div class="hero-content">
-      <div class="hero-text">
-        <p>Ancient wisdom. A new perspective.</p>
-        <h1>Find clarity in the unknown.</h1>
-        <h2>Ancient symbols. Modern reflection. A quiet space to ask the questions that matter.</h2>
-        <div class="hero-buttons">
-          <button class="begin-btn" type="button">
-            <span>Begin Reading</span>
-            <img src="src/assets/arrow.svg" alt="arrow icon" />
-          </button>
-          <button class="begin-btn" type="button">
-            <span>Explore the Oracles</span>
-            <img src="src/assets/arrow_higlight.svg" alt="arrow icon" />
-          </button>
+  </div>
+
+  <div class="reading-container">
+    <div class="reading-text">
+      <p>Make room for meaning</p>
+      <h2>A reading in three moments.</h2>
+    </div>
+    <div class="reading-cards">
+      <div class="reading-card">
+        <div class="reading-card-title">
+          <h2>01</h2>
+          <h3>Ask</h3>
         </div>
-        <p>No predictions carved in stone. Just a different way of seeing.</p>
+        <p>Bring a question.</p>
       </div>
-      <div class="hero-card-container">
-        <div class="hero-card">
-          <div class="hero-card-face hero-card-front">
-            <img src="src/assets/hero_card.png" alt="Dawn Oracle card" />
-          </div>
-          <div class="hero-card-face hero-card-back">
-            <p class="hero-card-eyebrow">A quiet invitation</p>
-            <p class="hero-card-message">The answer is already becoming clear.</p>
-            <p class="hero-card-hint">Turn inward. Begin where you are.</p>
-          </div>
+      <div class="reading-card">
+        <div class="reading-card-title">
+          <h2>02</h2>
+          <h3>Draw</h3>
         </div>
+        <p>Let the symbols appear.</p>
+      </div>
+      <div class="reading-card">
+        <div class="reading-card-title">
+          <h2>03</h2>
+          <h3>Reflect</h3>
+        </div>
+        <p>Take what resonates.</p>
       </div>
     </div>
-    <div class="hero-footer">
-      <p>01 / Enter the sanctuary</p>
-      <p>Take a breath. Begin again. ↓</p>
-    </div>
 
   </div>
 
-</div>
-<div class="calling-container">
-  <div class="calling-text">
-    <p>Follow the question</p>
-    <h2>What is calling you</h2>
-    <h3>Bring the question that has been quietly sitting with you.</h3>
-  </div>
+  <div class="daily-oracle-section">
+    <div class="daily-oracle-copy">
+      <p class="daily-oracle-eyebrow">The Daily Oracle</p>
+      <h2>Your message for today.</h2>
+      <button class="ask-btn daily-oracle-button" type="button">
+        <span>Reveal Today's Message ↗</span>
+      </button>
+      <p class="daily-oracle-note">Come back tomorrow for a new message.</p>
+    </div>
 
-  <div class="calling-cards">
-    <div class="calling-card"><img src="src/assets/editorial_artwork.png" alt="">
-      <h4>Love</h4>
-      <p>Explore connection, attraction, boundaries and emotional patterns.</p><a href="">Explore ↗</a>
-    </div>
-    <div class="calling-card"><img src="src/assets/editorial_artwork2.png" alt="">
-      <h4>Life</h4>
-      <p>Find perspective when you're standing between what was and what comes next.</p><a href="">Explore ↗</a>
-    </div>
-    <div class="calling-card"><img src="src/assets/Editorial_artwork3.png" alt="">
-      <h4>Career</h4>
-      <p>Explore ambition, decisions, opportunities and your next direction.</p><a href="">Explore ↗</a>
-    </div>
-  </div>
-</div>
-<div class="ask-oracle-container">
-  <div class="ask-oracle-text">
-    <p>A moment, just for you</p>
-    <h2>Ask the Oracle</h2>
-    <h3>Some questions don't need a simple answer. They need another perspective.</h3>
-  </div>
-  <div class="ask-oracle-input-cards">
-    <div class="ask-oracle-input">
-      <div id="input-title">
-        <p>What is on your heart?</p>
+    <div class="daily-oracle-display">
+      <div class="daily-oracle-card-group">
+        <img class="daily-oracle-card" src="src/assets/Oracle Card · Back.png" alt="Dawn Oracle card back">
+        <p class="daily-oracle-status">Waiting to be revealed</p>
       </div>
-      <input type="text" name="assdas" id="asdsa" placeholder="I’m standing at a crossroads in my career…">
-      <div class="input-sec-counter">
-        <div id="input-sec-text">
-          <p>Bring what is on your mind.</p>
-        </div>
-        <div id="input-char-count">
-          <p>insert character counter hero-card-eyebrow</p>
-        </div>
+
+      <div class="daily-oracle-card-group">
+        <img class="daily-oracle-card daily-oracle-card-front" src="src/assets/Tarot Card · Front2.png" alt="The Star tarot card">
+        <p class="daily-oracle-message">Hope returns quietly.</p>
       </div>
     </div>
-    <div class="ask-oracle-buttons">
-      <!-- buttons -->
+  </div>
+
+  <div class="about-container">
+    <img src="src/assets/room.png" alt="A quiet room with a candle and a table of books">
+    <div class="about-copy">
+      <p>About Dawn Oracle</p>
+      <h3>We don't tell you your future.</h3>
+      <h2>We help you see it differently.</h2>
+      <p>Dawn Oracle was created around a simple idea: sometimes we don't need another answer. We need another perspective.</p>
+      <button class="ask-btn" type="button">
+        <span>Our Story ↗</span>
+      </button>
     </div>
-    <div class="ask-oracle-cards">
-      <div class="ask-oracle-card"><img src="src/assets/Oracle Card · Back.png" alt=""></div>
-      <div class="ask-oracle-card"><img src="src/assets/Oracle Card · Back.png" alt=""></div>
-      <div class="ask-oracle-card"><img src="src/assets/Oracle Card · Back.png" alt=""></div>
+    <div class="about-values">
+      <div>
+        <p>Ancient symbolism</p>
+        <p>Drawing from traditions that have helped people reflect for generations.</p>
+      </div>
+      <div>
+        <p>Modern intelligence</p>
+        <p>Technology transforms those symbols into thoughtful personalized interpretations.</p>
+      </div>
+      <div>
+        <p>Your intuition</p>
+        <p>The final meaning belongs to you.</p>
+      </div>
     </div>
   </div>
 
-</div>
-<div class="methods-container">
-  <div class="methods-text">
-    <p>Four languages of reflection</p>
-    <h2>Ancient methods. A modern ritual.</h2>
-  </div>
-  <div class="methods-cards">
-    <div class="methods-card"><img src="src/assets/Tarot Card · Front.png" alt="">
-      <h5>Tarot</h5>
-      <p>Tarot uses archetypal imagery to explore patterns, relationships, choices and possibilities.</p>
-      <h6>Best for</h6>
-      <p>Clarity · Relationships · Choices · Archetypes</p>
-      <a href="">Begin a Tarot Reading ↗</a>
-
-
+  <div class="pricing-container">
+    <div class="pricing-title">
+      <p>Space for your practice</p>
+      <h2>Choose your ritual.</h2>
+      <p>Start gently. Go deeper when you're ready.</p>
     </div>
-    <div class="methods-card"></div>
-    <div class="methods-card"></div>
-    <div class="methods-card"></div>
+    <div class="pricing-cards">
+      <div class="pricing-card">
+        <p>A gentle beginning</p>
+        <h3>First Light</h3>
+        <p class="pricing-price">Free</p>
+        <ul>
+          <li>Daily Oracle</li>
+          <li>One-card readings</li>
+          <li>Basic Tarot readings</li>
+        </ul>
+        <button class="ask-btn bg-dark" type="button">Begin Free ↗</button>
+      </div>
+      <div class="pricing-card pricing-card-popular">
+        <p>Most popular</p>
+        <h3>Moonlight</h3>
+        <p class="pricing-price">€9.99 <span>/ month</span></p>
+        <ul>
+          <li>Unlimited readings</li>
+          <li>Three-card spreads</li>
+          <li>Five-card spreads</li>
+        </ul>
+        <button class="ask-btn" type="button">Enter Moonlight ↗</button>
+      </div>
+      <div class="pricing-card">
+        <p>A deeper practice</p>
+        <h3>Eclipse</h3>
+        <p class="pricing-price">€14.99 <span>/ month</span></p>
+        <ul>
+          <li>Advanced spreads</li>
+          <li>Extended interpretations</li>
+          <li>Pattern insights</li>
+        </ul>
+        <button class="ask-btn bg-dark" type="button">Go Deeper ↗</button>
+      </div>
+    </div>
+    <a class="pricing-link" href="#">View All Pricing &amp; Services ↗</a>
   </div>
 
-</div>
+  <div class="journal-container">
+    <div class="journal-title">
+      <p>For the curious mind</p>
+      <h2>From the Journal</h2>
+    </div>
+    <div class="journal-cards">
+      <div>
+        <img src="src/assets/lake.png" alt="Moonlight reflected across a quiet lake">
+        <p>Symbols · 5 min read</p>
+        <h3>What does The Moon mean in Tarot?</h3>
+        <a href="#">Read the story ↗</a>
+      </div>
+      <div>
+        <img src="src/assets/writing.png" alt="Writing in a journal beside a candle">
+        <p>Ritual · 5 min read</p>
+        <h3>How to ask the Oracle a better question</h3>
+        <a href="#">Read the story ↗</a>
+      </div>
+      <div>
+        <img src="src/assets/cards.png" alt="Three tarot cards arranged on linen">
+        <p>Practice · 5 min read</p>
+        <h3>Tarot spreads for new beginnings</h3>
+        <a href="#">Read the story ↗</a>
+      </div>
+      <div>
+        <img src="src/assets/starsymbol.png" alt="A golden star symbol on a dark stone">
+        <p>Symbols · 5 min read</p>
+        <h3>The symbolism of The Star</h3>
+        <a href="#">Read the story ↗</a>
+      </div>
+    </div>
+    <a class="journal-link" href="#">Explore the Journal ↗</a>
+  </div>
+  <div class="cta-container">
+    <p>Clarity begins with attention</p>
+    <h2>The day is beginning.</h2>
+    <h3>What are you ready to see?</h3>
+    <button class="ask-btn" type="button">Ask the Oracle ↗</button>
+  </div>
+  <footer>
+    <div class="footer-main">
+      <div class="footer-intro">
+        <div class="footer-logo">
+          <img src="src/assets/dawn-monogram.svg" alt="logo" />
+          <p>DAWN ORACLE</p>
+        </div>
+        <h1>Ancient wisdom. A new perspective.</h1>
+        <p>We don't tell you your future. We help you see it differently.</p>
+      </div>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <div class="footer-link-group">
+          <p>EXPLORE</p>
+          <a href="#">Readings</a>
+          <a href="src/pages/methods.html">Methods</a>
+          <a href="#">Our Oracles</a>
+          <a href="#">Pricing</a>
+        </div>
+        <div class="footer-link-group">
+          <p>DISCOVER</p>
+          <a href="#">Journal</a>
+          <a href="#">About</a>
+          <a href="#">Sign In</a>
+          <a href="#">Begin Reading</a>
+        </div>
+        <div class="footer-link-group">
+          <p>STAY CLOSE</p>
+          <a href="mailto:hello@dawnoracle.com">hello@dawnoracle.com</a>
+          <span>Instagram · Pinterest</span>
+          <a href="#">Return to yourself ↗</a>
+        </div>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Dawn Oracle. For reflection, not deterministic prediction.</p>
+      <div>
+        <a href="#">Privacy</a>
+        <span>·</span>
+        <a href="#">Terms</a>
+        <span>·</span>
+        <a href="#">Accessibility</a>
+      </div>
+    </div>
+  </footer>
 
-<footer></footer>
-
-<script type="module" src="/src/main.js"></script>
+  <script type="module" src="/src/main.js"></script>
 </body>
 
 </html>

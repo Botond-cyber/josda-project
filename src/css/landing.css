@@ -1,6 +1,9 @@
 @import "@fontsource/cormorant-garamond";
 @import "@fontsource/cookie";
 
+body p {
+    font-family: "Inter";
+}
 
 .hero-container {
     height: calc(100vh - 7rem);
@@ -207,6 +210,7 @@
     max-width: 50rem;
     line-height: 2.5rem;
     font-size: 1.5rem;
+    font-family: "Inter";
 }
 
 .calling-cards {
@@ -243,22 +247,33 @@
 }
 
 .calling-card a {
-    /*Még legyen megcsinálva, hogy a card div alján legyen a link :3*/
     color: var(--surface-primary-dark);
+    display: inline-block;
+    position: relative;
     text-decoration: none;
-
+    font-family: "Inter";
 }
-.calling-card a:hover {
-    animation-name: link-bg-change;
-    animation-duration: 2s;
-    animation-timing-function: linear;
-    animation-fill-mode: both;
 
+.calling-card a::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -0.2rem;
+    left: 0;
+    height: 1px;
+    background-color: var(--surface-primary-dark);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease-in-out;
+}
+
+.calling-card a:hover::after,
+.calling-card a:focus-visible::after {
+    transform: scaleX(1);
 }
 
 .ask-oracle-container {
     height: fit-content;
-    min-height: 100vh;
     width: 100%;
     background-color: var(--surface-primary-dark);
     display: flex;
@@ -268,6 +283,7 @@
     color: var(--text-primary-light);
     position:relative;
     flex-wrap: wrap;
+    padding-bottom: 3rem;
 }
 .ask-oracle-text {
     display: flex;
@@ -303,12 +319,12 @@
     border: 2px solid var(--text-secondary);
     padding: 1rem;
     border-radius: 1rem;
-    width: 45%;
+    width: 100%;
     height: 25vh;
     background-color: var(--surface-card);
     display: flex;
     flex-direction: column;
-    margin-bottom: 5rem;
+    margin-bottom: 1rem;
 }
 
 .ask-oracle-input #input-title p{
@@ -340,64 +356,732 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin-top: 3rem;
+    margin-top: 1rem;
+    width: 100%;
 }
 .ask-oracle-cards {
     width: 50%;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
-.ask-oracle-card img {
-    width: 200px;
+    gap: 1rem;
+    padding-left: 3rem;
+    margin: auto;
+    justify-content: space-around;
 }
 
-.methods-container {
-    height: fit-content;
-    min-height: 100vh;
+.ask-oracle-card {
+    position: relative;
+    width: min(30%, 13rem);
+    aspect-ratio: 0.625;
+    flex: 0 1 13rem;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: inherit;
+    cursor: pointer;
+    perspective: 1200px;
+}
+
+.ask-oracle-card:focus-visible {
+    outline: 2px solid var(--surface-higlight);
+    outline-offset: 0.25rem;
+}
+
+.ask-oracle-card-inner {
+    position: absolute;
+    inset: 0;
+    transform-style: preserve-3d;
+    transition: transform 800ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.ask-oracle-card:hover .ask-oracle-card-inner,
+.ask-oracle-card:focus-within .ask-oracle-card-inner {
+    transform: rotateY(180deg);
+}
+
+.ask-oracle-card-face {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.ask-oracle-card-front img {
+    display: block;
     width: 100%;
-    background-color: var(--surface-primary-dark);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 2rem 6rem;
-    color: var(--text-primary-light);
-    position:relative;
-    flex-wrap: wrap;
-}
-.methods-text {
-    display: flex;
-    flex-direction: column;
     height: 100%;
+    object-fit: contain;
 }
 
-.methods-text h2 {
+.ask-oracle-card-back {
+    padding: 1rem;
+    border: 1px solid var(--surface-higlight);
+    color: var(--surface-primary-light);
+    text-align: center;
+    background: linear-gradient(rgb(16 19 28 / 0.88), rgb(16 19 28 / 0.88)),
+        url("../assets/hero_background.png") center / cover;
+    transform: rotateY(180deg);
+}
+
+.ask-oracle-card-eyebrow,
+.ask-oracle-card-hint {
+    color: var(--surface-higlight);
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.ask-oracle-card-message {
+    max-width: 16rem;
+    margin: 0.75rem 0;
+    font-family: "Cormorant Garamond", cursive;
+    font-size: 1.5rem;
+    line-height: 1.1;
+}
+
+.ask-oracle-card-hint {
+    color: var(--text-primary-light);
+    font-size: 0.55rem;
+}
+
+.ask-btn {
+    background-color: var(--surface-higlight);
+    border: none;
+    color: var(--surface-primary-dark);
+    padding: 1rem 1.5rem;
+    border-radius: 0.6rem;
+    font-size: 1rem;
+    font-family: "Inter", sans-serif;
+    display: flex;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.bg-dark {
+    background-color: var(--surface-card);
+    color: var(--surface-primary-light);
+    border: 1px solid var(--grey-stroke);
+}
+
+.ask-btn:hover {
+    scale: 1.04;
+}
+.ask-oracle-input-btn {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.ask-oracle-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.method-card {
+    background-color: var(--surface-card);
+    color: var(--surface-primary-light);
+}
+.methods-card-container {
+    background-color: var(--surface-primary-dark);
+    padding-top: 5rem;
+}
+
+.methods-card-container-title h1 {
     color: var(--surface-primary-light);
     margin-top: 0;
-    margin-bottom: 0.5rem;
-    line-height: 6rem;
+    padding-bottom: 1rem;
+}
+.methods-card-container-title p {
+    color: var(--surface-higlight);
+    text-transform: uppercase;
+
+}
+.methods-card-container-title {
+    text-align: start;
+}
+.methods-btn  .ask-btn{
+    width: fit-content;
+    margin: 3rem 0 4rem 0;
+    background-color: var(--surface-primary-dark);
+    color: var(--surface-higlight);
+    border: 2px solid var(--surface-higlight);
+}
+.method-card-footer {
+    font-family: "Inter";
+}
+
+.oracle-card {
+    background-color: var(--surface-primary-dark);
+    border-radius: 15px;
+    border: 2px solid var(--surface-primary-dark);
+    transition: scale 0.25s ease-in-out;
+}
+
+.oracle-card:hover,
+.oracle-card:focus-within {
+    scale: 1.025;
+}
+
+.oracle-card h4{
+    color: var(--surface-primary-light);
+
+    text-transform: none;
+}
+.oracle-card h5 {
+    text-transform: uppercase;
+    color: var(--surface-higlight);
+    font-family: "Inter";
+    font-weight: 100;
+
+}
+.oracle-card p {
+
+    color: var(--surface-primary-light);
+}
+.oracle-card a {
+    color: var(--surface-higlight);
+    display: inline-block;
+    position: relative;
+    font-family: "Inter";
+    text-decoration: none;
+}
+
+.oracle-card a::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -0.2rem;
+    left: 0;
+    height: 1px;
+    background-color: var(--surface-higlight);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease-in-out;
+}
+
+.oracle-card a:hover::after,
+.oracle-card a:focus-visible::after {
+    transform: scaleX(1);
+}
+.oracle-card-text {
+    padding: 1rem;
+}
+.oracle-btn .ask-btn {
+    margin: auto;
+    margin-top: 2rem;
+}
+
+.reading-container {
+    height: fit-content;
+    width: 100%;
+    background-color: var(--surface-card-light);
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    padding: 5.5rem max(5.5vw, 2rem);
+    color: var(--surface-primary-dark);
+}
+
+.reading-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.reading-text h2 {
+    color: var(--surface-primary-dark);
+    margin: 0;
+    line-height: 1.1;
     font-size: 6rem;
     font-weight: lighter;
     font-family: "Cormorant Garamond", cursive;
 }
 
-.methods-text p:first-of-type {
-    color: var(--surface-higlight);
+.reading-text p:first-of-type {
+    color: var(--text-secondary);
     text-transform: uppercase;
-    margin-top: 6rem;
+    margin: 0 0 1rem;
+    font-size: 1rem;
 }
 
-.methods-card {
-    border: 3px solid red;
+.reading-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 3.25rem;
 }
-@keyframes link-bg-change {
+
+.reading-card {
+    border-top: 1px solid rgb(98 93 88 / 24%);
+    padding-top: 2.5rem;
+}
+
+.reading-card-title {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+}
+
+.reading-card h2 {
+    color: var(--text-secondary);
+    font-family: "Cormorant Garamond", cursive;
+    font-weight: lighter;
+    font-size: 4rem;
+    line-height: 1;
+    margin: 0;
+}
+
+.reading-card h3 {
+    font-family: "Cormorant Garamond", cursive;
+    text-transform: uppercase;
+    font-weight: lighter;
+    font-size: 2.25rem;
+    line-height: 1;
+    margin: 0;
+}
+
+.reading-card p {
+    color: var(--text-secondary);
+    font-size: 1.125rem;
+    margin: 1.75rem 0 0;
+}
+
+.daily-oracle-section {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    align-items: center;
+    gap: 4rem;
+    min-height: 36rem;
+    padding: 5rem max(5.5vw, 2rem);
+    color: var(--surface-primary-light);
+    background: var(--surface-primary-dark);
+}
+
+.daily-oracle-copy {
+    max-width: 40rem;
+}
+
+.daily-oracle-eyebrow {
+    margin: 0 0 1.5rem;
+    color: var(--surface-higlight);
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.daily-oracle-copy h2 {
+    max-width: 45rem;
+    margin: 0 0 1.5rem;
+    font-family: "Cormorant Garamond", cursive;
+    font-weight: lighter;
+    line-height: 1.05;
+    font-size: 6rem;
+}
+
+.daily-oracle-button {
+    min-height: 3.5rem;
+    padding-inline: 1.5rem;
+}
+.daily-oracle-copy h2 {
+    font-size: 6rem;
+    margin-bottom: 3rem;
+}
+
+
+.daily-oracle-note {
+    margin: 1.5rem 0 0;
+    color: var(--text-primary-light);
+    font-size: 0.9rem;
+}
+
+.daily-oracle-display {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: clamp(1.5rem, 3vw, 3rem);
+}
+
+.daily-oracle-card-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: clamp(10rem, 16vw, 14rem);
+}
+
+.daily-oracle-card {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: scale 0.25s ease-in-out;
+}
+
+.daily-oracle-card-group:hover .daily-oracle-card,
+.daily-oracle-card-group:focus-within .daily-oracle-card {
+    scale: 1.04;
+}
+
+.daily-oracle-card-front {
+    width: 100%;
+}
+
+.daily-oracle-status {
+    margin: 1rem 0 0;
+    color: var(--surface-higlight);
+    font-size: 0.75rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.daily-oracle-message {
+    margin: 1rem 0 0;
+    font-family: "Cormorant Garamond", cursive;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 5rem max(5.5vw, 2rem);
+    color: var(--surface-primary-dark);
+    background-color: var(--surface-primary-light);
+}
+
+.about-container > img {
+    width: 30%;
+    height: fit-content;
+    border-radius: 0.5rem;
+    object-fit: cover;
+}
+
+.about-copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: calc(70% - 2rem);
+    padding-left: 3rem;
+}
+
+.about-copy p:first-of-type {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.about-copy h3 {
+    margin: 0 0 1rem;
+    font-family: "Cormorant Garamond", cursive;
+    font-size: 2.5rem;
+    font-weight: lighter;
+}
+
+.about-copy h2 {
+    margin: 0 0 1.5rem;
+    font-family: "Cormorant Garamond", cursive;
+    font-size: 6rem;
+    font-weight: lighter;
+    line-height: 1;
+}
+
+.about-copy p:last-of-type {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.about-copy .ask-btn {
+    width: fit-content;
+    margin-top: 1rem;
+}
+
+.about-values {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    width: 100%;
+}
+
+.about-values div {
+    width: 30%;
+    border-top: 1px solid rgb(98 93 88 / 24%);
+    padding-top: 1rem;
+}
+
+.about-values p:first-of-type {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.about-values p:last-of-type {
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.pricing-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    padding: 5rem max(5.5vw, 2rem);
+    color: var(--surface-primary-light);
+    background-color: var(--surface-primary-dark);
+}
+
+.pricing-title p:first-of-type {
+    color: var(--surface-higlight);
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.pricing-title h2 {
+    margin: 0;
+    font-family: "Cormorant Garamond", cursive;
+    font-size: 6rem;
+    font-weight: lighter;
+    line-height: 1;
+}
+
+.pricing-title p:last-of-type {
+    color: var(--text-primary-light);
+}
+
+.pricing-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+.pricing-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.75rem;
+    border: 1px solid var(--grey-stroke);
+    border-radius: 0.75rem;
+    background-color: var(--surface-card);
+}
+
+.pricing-card-popular {
+    border-color: var(--surface-higlight);
+    background-color: #22232d;
+}
+
+.pricing-card p:first-of-type {
+    color: var(--surface-higlight);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+
+.pricing-card h3 {
+    margin: 0.5rem 0 1rem;
+    font-family: "Cormorant Garamond", cursive;
+    font-size: 2rem;
+    font-weight: lighter;
+}
+
+.pricing-price {
+    margin: 0 0 1rem;
+    font-family: "Cormorant Garamond", cursive;
+    font-size: 3rem;
+}
+
+.pricing-price span {
+    font-family: "Inter", sans-serif;
+    font-size: 0.75rem;
+}
+
+.pricing-card ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+    margin: 0 0 1.5rem;
+    padding: 1.25rem 0;
+    border-top: 1px solid var(--grey-stroke);
+    list-style: none;
+}
+
+.pricing-card li {
+    color: var(--text-primary-light);
+}
+
+.pricing-card li::before {
+    margin-right: 0.6rem;
+    color: var(--text-primary-light);
+    content: "✓";
+}
+
+.pricing-card .bg-dark {
+    border-color: var(--surface-higlight);
+    color: var(--surface-higlight);
+}
+
+.pricing-link{
+    font-family: "Inter";
+    width: fit-content;
+    display: inline-block;
+    position: relative;
+    color: var(--surface-higlight);
+    text-decoration: none;
     
-  0% {background-color: var(--surface-primary-light); color: var(--surface-primary-dark);}
-  50% {background-color: var(--surface-primary-dark); color: var(--surface-primary-light);}
-  100% {background-color: var(--surface-primary-light); color: var(--surface-primary-dark);}
 }
 
+.pricing-link::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -0.2rem;
+    left: 0;
+    height: 1px;
+    background-color: var(--surface-higlight);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease-in-out;
+}
+
+.pricing-link:hover::after,
+.pricing-link:focus-visible::after {
+    transform: scaleX(1);
+}
+
+.journal-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 5rem max(5.5vw, 2rem);
+    color: var(--surface-primary-dark);
+    background-color: var(--surface-primary-light);
+}
+
+.journal-title p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.journal-title h2 {
+    margin: 0 0 1rem 0;
+
+    font-family: "Cormorant Garamond", cursive;
+    font-size: 6rem;
+    font-weight: lighter;
+    line-height: 1;
+}
+
+.journal-cards {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+.journal-cards img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 0.6rem;
+}
+
+.journal-cards p {
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+
+.journal-cards h3 {
+    margin: 0.75rem 0 1rem;
+    font-family: "Cormorant Garamond", cursive;
+    font-size: 1.75rem;
+    font-weight: lighter;
+    line-height: 1.1;
+}
+
+.journal-cards a,
+.journal-link {
+    color: var(--surface-primary-dark);
+    display: inline-block;
+    position: relative;
+    font-family: "Inter";
+    text-decoration: none;
+}
+
+.journal-cards a::after,
+.journal-link::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -0.2rem;
+    left: 0;
+    height: 1px;
+    background-color: var(--surface-primary-dark);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease-in-out;
+}
+
+.journal-cards a:hover::after,
+.journal-cards a:focus-visible::after,
+.journal-link:hover::after,
+.journal-link:focus-visible::after {
+    transform: scaleX(1);
+}
+
+.journal-link {
+    width: fit-content;
+    margin-top: 1rem;
+}
+
+.cta-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem max(5.5vw, 2rem);
+    text-align: center;
+    background-color: var(--surface-primary-dark);
+}
+
+.cta-container p {
+    margin: 0;
+    color: var(--surface-higlight);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+}
+
+
+.cta-container h2 {
+    margin: 2rem 0;
+    color: var(--surface-primary-light);
+    font-family: "Cormorant Garamond", cursive;
+    font-size: 6rem;
+    font-weight: lighter;
+    line-height: 1;
+}
+
+.cta-container h3 {
+    margin: 0;
+    color: var(--surface-primary-light);
+    font-family: "Cormorant Garamond", cursive;
+    font-size: 2rem;
+    font-weight: lighter;
+}
+
+.cta-container .ask-btn {
+    margin-top: 3rem;
+}
+
+@media screen and (max-width: 1600px){
+    .about-copy {
+        padding-left: 0;
+    }
+}
 
 
 @media screen and (max-width: 1300px) {
@@ -414,16 +1098,149 @@
         padding: 2rem 2rem;
 
     }
-    .ask-oracle-input {
+    .ask-oracle-input-btn {
         width: 100%;
+        padding-bottom: 4rem;
     }
-    .ask-oracle-cards {
+    .ask-oracle-cards{
+        margin: 0;
         width: 100%;
+        padding: 0;
+        justify-content: space-around;
     }
 
 }
 
+@media screen and (max-width: 1200px) {
+    .about-container > img {
+        display: none;
+    }
+
+    .about-copy {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .journal-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .daily-oracle-copy button {
+        margin-top: 3rem;
+    }
+}
+
+@media screen and (max-width: 900px){
+    .ask-oracle-cards {
+        margin: 0;
+        width: 100%;
+        padding: 0;
+
+    }
+    .daily-oracle-section {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .daily-oracle-copy {
+        width: 100%;
+        max-width: fit-content;
+    }
+
+
+    .journal-title h2 {
+        font-size: 4rem;
+    }
+
+    .cta-container h2 {
+        font-size: 4rem;
+    }
+
+    .daily-oracle-copy h2 {
+        width: 100%;
+        max-width: none;
+        font-size: clamp(4rem, 10vw, 6rem);
+    }
+
+    .about-container {
+        flex-direction: column;
+    }
+
+    .about-container> img,
+    .about-copy {
+        width: 100%;
+    }
+
+    .pricing-cards {
+        grid-template-columns: 1fr;
+    }
+    .pricing-price{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .pricing-card {
+        width: 100%;
+        text-align: center;
+    }
+    .pricing-card button{
+        margin: auto;
+    }
+    .about-copy button {
+        margin: auto;
+    }
+    .daily-oracle-display{
+        gap: 10rem;
+    }
+    .daily-oracle-card {
+        width: 15rem;
+        
+    }
+    .daily-oracle-card-group {
+        width: fit-content;
+    }
+    .daily-oracle-button {
+
+        margin: 2.5rem auto;
+    }
+    .daily-oracle-note {
+        text-align: center;
+    }
+}
+
 @media screen and (max-width: 700px) {
+
+    .calling-card {
+    min-width: 15rem;
+    margin: auto;
+    padding: 0;
+    }
+    .calling-container {
+        padding: 0;
+        padding-bottom: 2rem;
+    }
+    .calling-card{
+        width: 20rem;
+    }
+
+    .calling-text, .ask-oracle-text {
+        padding: 0 2rem 0 2rem;
+        text-align: start;
+    }
+    .calling-text h2, .ask-oracle-text h2, .methods-card-container-title h1 {
+        font-size: 4rem;
+        line-height: 4rem;
+        text-align: start;
+    }
+    .calling-text h3, .ask-oracle-text h3{
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+    .calling-text p:first-of-type, .ask-oracle-text p:first-of-type, .methods-card-container-title p {
+        margin-top: 2rem;
+        text-align: start;
+    }
+    
+
     .hero-text h1 {
         font-size: 4rem;
         line-height: 5rem;
@@ -440,8 +1257,115 @@
         align-items: center;
     }
 
+    .ask-oracle-cards {
+        display: none;
+    }
+    .ask-oracle-input-btn {
+        padding-bottom: 0;
+    }
+    .methods-card-container, .ask-oracle-container {
+        padding: 3rem;
+    }
+    .ask-oracle-buttons {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+    }
+
+    .methods-btn .ask-btn{
+        margin: 2rem auto 2rem auto;
+    }
+
+    .reading-container {
+        gap: 2rem;
+        padding: 3.5rem 1.5rem;
+    }
+
+    .reading-text h2 {
+        font-size: 4rem;
+    }
+
+    .reading-cards {
+        grid-template-columns: 1fr;
+        gap: 1.75rem;
+    }
+
+    .reading-card {
+        padding-top: 1.5rem;
+    }
+
+    .reading-card p {
+        margin-top: 1rem;
+    }
+
+    .daily-oracle-section {
+        gap: 2.5rem;
+        padding: 3.5rem 1.5rem;
+    }
+
+    .daily-oracle-display {
+        gap: 1rem;
+    }
+
+    .daily-oracle-card {
+        width: 100%;
+    }
+
+    .daily-oracle-card-group {
+        width: min(40vw, 13rem);
+    }
+
+    .daily-oracle-message {
+        font-size: 1.25rem;
+    }
+
+    .about-container {
+        padding: 3.5rem 1.5rem;
+    }
+
+    .pricing-container {
+        gap: 2rem;
+        padding: 3.5rem 1.5rem;
+    }
+
+    .pricing-title h2 {
+        font-size: 4rem;
+    }
+
+    .journal-container {
+        gap: 1.5rem;
+        padding: 3.5rem 1.5rem;
+    }
+
+    .about-copy h2 {
+        font-size: 4rem;
+    }
+
+    .about-copy h3 {
+        font-size: 2rem;
+    }
+
+
+
+    .about-values {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .about-values div {
+        width: 100%;
+    }
 }
 
+@media screen and (max-width: 550px) {
+         .ask-oracle-buttons {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: auto;
+     }
+}
 @media screen and (max-width: 400px) {
     .hero-container {
         padding: 2rem 1rem;
@@ -469,4 +1393,80 @@
         font-size: 1rem;
         line-height: 1.5rem;
     }
+
+    .calling-card{
+        width: 18rem;
+    }
+
+    .ask-oracle-container{
+        padding: 0;
+    }
+
+    .ask-oracle-input-btn{
+        width: 100%;
+    }
+
+    .ask-oracle-buttons {
+        width: 75%;
+     }
+
+     .ask-oracle-input {
+        width: 80%;
+        margin: auto;
+        margin-bottom: 2rem;
+     }
+
+     .daily-oracle-section {
+        padding: 3rem 1rem;
+     }
+
+
+     .about-container {
+        padding: 3rem 1rem;
+     }
+
+     .pricing-container {
+        padding: 3rem 1rem;
+     }
+
+     .journal-container {
+        padding: 3rem 1rem;
+     }
+
+     .cta-container {
+        padding: 3rem 1rem;
+     }
+
+     .cta-container h2 {
+        font-size: 3rem;
+     }
+
+     .cta-container h3 {
+        font-size: 1.5rem;
+     }
+
+     .journal-cards {
+        grid-template-columns: 1fr;
+     }
+
+     .about-copy h3 {
+        font-size: 2rem;
+     }
+     .about-copy h2 {
+        font-size: 3rem;
+     }
+
+     .daily-oracle-display {
+        gap: 0.75rem;
+     }
+
+     .daily-oracle-card {
+        width: 100%;
+     }
+
+     .daily-oracle-card-group {
+        width: 42vw;
+        max-width: 11rem;
+     }
+
 }
