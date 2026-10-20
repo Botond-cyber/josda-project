@@ -55,6 +55,7 @@ export default defineConfig({
         main: resolve("index.html"),
         methods: resolve("src/pages/methods.html"),
         pricing: resolve("src/pages/pricing.html"),
+        oracles: resolve("src/pages/oracle.html"),
       },
     },
   },

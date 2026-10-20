@@ -465,6 +465,7 @@ body p {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    text-decoration: none;
 }
 .bg-dark {
     background-color: var(--surface-card);

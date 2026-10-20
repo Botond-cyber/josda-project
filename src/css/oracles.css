@@ -1,0 +1,356 @@
+.oracle-page {
+  color: var(--surface-primary-dark);
+  background: var(--surface-primary-light);
+  overflow-x: hidden;
+}
+.oracle-page main {
+  width: 100%;
+}
+.oracle-hero,
+.oracle-directory,
+.oracle-question,
+.oracle-others {
+  padding: 5rem 6rem;
+}
+.oracle-hero {
+  min-height: 34rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+  color: var(--surface-primary-light);
+  background: var(--surface-primary-dark);
+}
+.oracle-hero h1 {
+  margin: 0.5rem 0 1rem;
+  font-size: clamp(3.75rem, 5.5vw, 5.5rem);
+  font-weight: lighter;
+  line-height: 0.88;
+}
+.eyebrow {
+  margin: 0;
+  color: var(--surface-higlight);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.oracle-hero-copy {
+  align-self: end;
+  max-width: 28rem;
+  padding-bottom: 5rem;
+  color: var(--text-primary-light);
+}
+.oracle-hero-copy h2 {
+  margin: 0;
+  color: var(--surface-primary-light);
+  font:
+    lighter 1.75rem "Cormorant Garamond",
+    cursive;
+}
+.oracle-hero-copy p {
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+.oracle-hero-collage {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  align-items: end;
+}
+.oracle-hero-collage img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 510 / 740;
+  object-fit: contain;
+  border-radius: 0.25rem;
+}
+.oracle-directory {
+  background: var(--surface-primary-light);
+}
+.section-intro h2 {
+  margin: 0.5rem 0;
+  font:
+    lighter clamp(2.75rem, 4vw, 4rem) "Cormorant Garamond",
+    cursive;
+}
+.section-intro > p:last-child {
+  margin-top: 0;
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+}
+.oracle-card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.8rem;
+  margin-top: 2.5rem;
+}
+.oracle-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 0.8rem;
+  color: var(--surface-primary-light);
+  background: var(--surface-card);
+  border-radius: 0.3rem;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+.oracle-card:hover {
+  transform: translateY(-0.35rem);
+}
+.oracle-card img {
+  width: 100%;
+  aspect-ratio: 0.78;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 0.15rem;
+}
+.oracle-card-number {
+  margin-top: 0.8rem;
+  color: var(--surface-higlight);
+  font-size: 0.7rem;
+}
+.oracle-card h3 {
+  margin: 0.25rem 0;
+  font:
+    lighter 1.4rem "Cormorant Garamond",
+    cursive;
+}
+.oracle-card p {
+  margin: 0;
+  color: var(--text-primary-light);
+  font-size: 0.85rem;
+}
+.oracle-detail {
+  display: grid;
+  grid-template-columns: minmax(15rem, 1fr) minmax(0, 1.2fr);
+  gap: clamp(3rem, 10vw, 10rem);
+  align-items: center;
+  padding: 5rem 6rem;
+}
+.oracle-detail-light {
+  color: var(--surface-primary-dark);
+  background: var(--surface-primary-light);
+}
+.oracle-detail-dark {
+  color: var(--surface-primary-light);
+  background: var(--surface-primary-dark);
+}
+.oracle-detail > img {
+  width: min(100%, 22rem);
+  height: auto;
+  aspect-ratio: 510 / 740;
+  justify-self: center;
+  object-fit: contain;
+  border-radius: 0.3rem;
+}
+.oracle-detail h2 {
+  margin: 0.4rem 0;
+  font:
+    lighter clamp(2.5rem, 4vw, 3.75rem) "Cormorant Garamond",
+    cursive;
+}
+.oracle-detail h3 {
+  margin: 0 0 1rem;
+  font:
+    lighter 1.25rem "Cormorant Garamond",
+    cursive;
+}
+.oracle-detail p {
+  max-width: 35rem;
+  color: var(--text-primary-light);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.oracle-detail-light p {
+  color: var(--text-secondary);
+}
+.oracle-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 1rem 0;
+  border-top: 1px solid rgb(190 185 180 / 30%);
+  border-bottom: 1px solid rgb(190 185 180 / 30%);
+  color: var(--text-primary-light);
+  font-size: 0.72rem;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+.oracle-detail-light .oracle-meta {
+  color: var(--text-secondary);
+}
+.oracle-quote {
+  font:
+    italic 1.05rem "Cormorant Garamond",
+    cursive;
+}
+.oracle-detail .begin-btn {
+  padding: 0.65rem 1rem;
+  font-size: 0.8rem;
+}
+.oracle-question {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 5rem;
+  align-items: center;
+}
+.oracle-question h2,
+.oracle-others h2,
+.oracle-cta h2 {
+  margin: 0.4rem 0;
+  font:
+    lighter clamp(2.5rem, 4vw, 3.75rem) "Cormorant Garamond",
+    cursive;
+}
+.oracle-question > div > p:last-child,
+.oracle-others > p {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+}
+.question-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.question-options button {
+  padding: 1rem;
+  border: 1px solid #d4cbbe;
+  border-radius: 0.35rem;
+  color: var(--surface-primary-dark);
+  background: rgb(255 255 255 / 35%);
+  text-align: left;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+.question-options button:hover {
+  background: var(--surface-card-light);
+}
+.question-options small {
+  display: block;
+  margin-top: 0.3rem;
+  color: var(--text-secondary);
+  font-size: 0.65rem;
+}
+.oracle-others {
+  background: var(--surface-card-light);
+}
+.oracle-others > p:not(.eyebrow) {
+  max-width: 42rem;
+}
+.oracle-mini-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.8rem;
+  margin: 2rem 0;
+}
+.oracle-mini-grid a {
+  color: var(--surface-primary-dark);
+  text-decoration: none;
+}
+.oracle-mini-grid img {
+  width: 100%;
+  aspect-ratio: 1.35;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 0.25rem;
+}
+.oracle-mini-grid span {
+  display: block;
+  margin-top: 0.4rem;
+  font:
+    1.1rem "Cormorant Garamond",
+    cursive;
+}
+.oracle-others .begin-btn {
+  padding: 0.7rem 1rem;
+  font-size: 0.8rem;
+}
+.oracle-cta {
+  padding: 6rem 2rem;
+  color: var(--surface-primary-light);
+  background: var(--surface-primary-dark);
+  text-align: center;
+}
+.oracle-cta > div {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+.oracle-cta .begin-btn {
+  padding: 0.65rem 1rem;
+  color: var(--surface-higlight);
+  background: transparent;
+  border: 1px solid var(--surface-higlight);
+  font-size: 0.75rem;
+}
+@media (max-width: 900px) {
+  .oracle-hero,
+  .oracle-detail,
+  .oracle-question {
+    grid-template-columns: 1fr;
+  }
+  .oracle-hero-copy {
+    padding: 0;
+  }
+  .oracle-card-grid,
+  .oracle-mini-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .oracle-detail > img {
+    width: min(100%, 20rem);
+    height: auto;
+  }
+  .oracle-detail-light > img {
+    grid-row: 1;
+  }
+}
+@media (max-width: 600px) {
+  .oracle-hero,
+  .oracle-directory,
+  .oracle-question,
+  .oracle-others,
+  .oracle-detail {
+    padding: 3rem 1rem;
+  }
+  .oracle-hero-collage {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.35rem;
+  }
+  .oracle-hero h1 {
+    font-size: 3.5rem;
+  }
+  .oracle-hero-copy h2 {
+    font-size: 1.5rem;
+  }
+  .oracle-detail h2,
+  .oracle-question h2,
+  .oracle-others h2,
+  .oracle-cta h2 {
+    font-size: 2.5rem;
+  }
+  .oracle-detail p,
+  .oracle-question > div > p:last-child,
+  .oracle-others > p {
+    font-size: 0.95rem;
+  }
+  .oracle-hero-collage img {
+    height: auto;
+  }
+  .oracle-card-grid,
+  .oracle-mini-grid {
+    gap: 0.5rem;
+  }
+  .oracle-question {
+    gap: 2rem;
+  }
+  .oracle-meta {
+    gap: 0.75rem;
+  }
+  .oracle-detail > img {
+    width: min(100%, 20rem);
+    height: auto;
+  }
+}
