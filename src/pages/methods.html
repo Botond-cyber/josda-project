@@ -18,7 +18,12 @@
       <p>DAWN ORACLE</p>
     </div>
 
-    <div class="nav">
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation">
+      <span class="menu-toggle-label">Menu</span>
+      <span class="menu-toggle-icon" aria-hidden="true"><span></span><span></span></span>
+    </button>
+
+    <nav class="nav" id="main-navigation" aria-label="Main navigation">
       <div class="nav-item"><a href="#">Readings</a>
         <div class="nav-underline"></div>
       </div>
@@ -37,7 +42,7 @@
       <div class="nav-item"><a href="#">About</a>
         <div class="nav-underline"></div>
       </div>
-    </div>
+    </nav>
 
     <div class="login-btn-container">
       <div class="sign-in-btn">Sign In</div>
@@ -532,5 +537,6 @@
     </div>
   </footer>
 </div>
+<script type="module" src="/src/main.js"></script>
 </body>
 </html>

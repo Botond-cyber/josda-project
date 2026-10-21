@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -12,38 +12,37 @@
 <body>
 <div class="pricing-page">
   <div class="pricing-dark">
+
+    <!--Header-->
     <header>
       <div class="header-logo">
-        <img src="../assets/dawn-monogram.svg" alt="Dawn Oracle logo">
+        <img src="/src/assets/dawn-monogram.svg" alt="logo" />
         <p>DAWN ORACLE</p>
       </div>
-      <nav class="nav" aria-label="Main navigation">
-        <div class="nav-item"><a href="#">Readings</a>
+
+      <nav class="nav" id="main-navigation" aria-label="Main navigation">
+        <div class="nav-item"><a href="./methods.html">Methods</a>
           <div class="nav-underline"></div>
         </div>
-        <div class="nav-item"><a href="../pages/methods.html">Methods</a>
+        <div class="nav-item"><a href="./oracles.html">Our Oracles</a>
           <div class="nav-underline"></div>
         </div>
-        <div class="nav-item"><a href="../pages/oracles.html">Our Oracles</a>
+        <div class="nav-item"><a href="./pricing.html">Pricing</a>
           <div class="nav-underline"></div>
         </div>
-        <div class="nav-item"><a href="../pages/pricing.html">Pricing</a>
-          <div class="nav-underline"></div>
-        </div>
-        <div class="nav-item"><a href="#">Journal</a>
-          <div class="nav-underline"></div>
-        </div>
-        <div class="nav-item"><a href="#">About</a>
+        <div class="nav-item"><a href="/index.html">About</a>
           <div class="nav-underline"></div>
         </div>
       </nav>
+
       <div class="login-btn-container">
         <div class="sign-in-btn">Sign In</div>
-        <button class="begin-btn" type="button"><span>Begin Reading</span><img src="../assets/arrow.svg" alt="">
+        <button class="begin-btn" type="button" onclick="window.location.href='#journal'">
+          <span>Begin Reading</span>
+          <img src="../assets/arrow.svg" alt="arrow icon" />
         </button>
       </div>
     </header>
-
     <main>
       <div class="pricing-hero">
         <div class="pricing-hero-content">
@@ -313,13 +312,13 @@
     </div>
   </div>
   <script>
-    document.querySelectorAll('.faq-list details').forEach((detail) => {
-      const indicator = detail.querySelector('summary span');
+    document.querySelectorAll(".faq-list details").forEach((detail) => {
+      const indicator = detail.querySelector("summary span");
       const updateIndicator = () => {
-        indicator.textContent = detail.open ? '−' : '+';
+        indicator.textContent = detail.open ? "−" : "+";
       };
 
-      detail.addEventListener('toggle', updateIndicator);
+      detail.addEventListener("toggle", updateIndicator);
       updateIndicator();
     });
   </script>
