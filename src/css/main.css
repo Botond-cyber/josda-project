@@ -6,12 +6,11 @@
     --surface-primary-light: #F5F0E7;
     --surface-primary-dark: #10131C;
     --surface-card: #181A24;
-    --surface-card-light:#EDE6D9 ;
+    --surface-card-light: #EDE6D9;
     --surface-higlight: #C8A96B;
     --text-primary-light: #BEB9B4;
     --text-secondary: #625D58;
     --grey-stroke: #3C3A3E;
-    
 }
 
 
@@ -27,6 +26,10 @@ h1 {
 body {
     margin: 0;
     padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 .container {

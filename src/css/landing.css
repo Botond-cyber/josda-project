@@ -579,8 +579,8 @@ body p {
     padding: 1rem;
 }
 .oracle-btn .ask-btn {
-    margin: auto;
-    margin-top: 2rem;
+    margin: 2rem auto auto;
+    max-width: 20rem;
 }
 
 .reading-container {

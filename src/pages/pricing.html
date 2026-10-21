@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -12,38 +12,36 @@
 <body>
 <div class="pricing-page">
   <div class="pricing-dark">
+    <!--Header-->
     <header>
       <div class="header-logo">
-        <img src="../assets/dawn-monogram.svg" alt="Dawn Oracle logo">
+        <img src="/src/assets/dawn-monogram.svg" alt="logo" />
         <p>DAWN ORACLE</p>
       </div>
-      <nav class="nav" aria-label="Main navigation">
-        <div class="nav-item"><a href="#">Readings</a>
+
+      <nav class="nav" id="main-navigation" aria-label="Main navigation">
+        <div class="nav-item"><a href="./methods.html">Methods</a>
           <div class="nav-underline"></div>
         </div>
-        <div class="nav-item"><a href="../pages/methods.html">Methods</a>
+        <div class="nav-item"><a href="./oracles.html">Our Oracles</a>
           <div class="nav-underline"></div>
         </div>
-        <div class="nav-item"><a href="../pages/oracles.html">Our Oracles</a>
+        <div class="nav-item"><a href="./pricing.html">Pricing</a>
           <div class="nav-underline"></div>
         </div>
-        <div class="nav-item"><a href="../pages/pricing.html">Pricing</a>
-          <div class="nav-underline"></div>
-        </div>
-        <div class="nav-item"><a href="#">Journal</a>
-          <div class="nav-underline"></div>
-        </div>
-        <div class="nav-item"><a href="#">About</a>
+        <div class="nav-item"><a href="/index.html">About</a>
           <div class="nav-underline"></div>
         </div>
       </nav>
+
       <div class="login-btn-container">
-        <div class="sign-in-btn">Sign In</div>
-        <button class="begin-btn" type="button"><span>Begin Reading</span><img src="../assets/arrow.svg" alt="">
+        <a class="sign-in-btn" href="../../index.html#ask-oracle">Sign In</a>
+        <button class="begin-btn" type="button" onclick="window.location.href='../../index.html'">
+          <span>Begin Reading</span>
+          <img src="../assets/arrow.svg" alt="arrow icon" />
         </button>
       </div>
     </header>
-
     <main>
       <div class="pricing-hero">
         <div class="pricing-hero-content">
@@ -73,7 +71,7 @@
               <li>Basic interpretations</li>
               <li>Limited reading history</li>
             </ul>
-            <button class="outline-button" type="button">Begin Free <span>↗</span></button>
+            <button class="outline-button" type="button" onclick="window.location.href='../../index.html#ask-oracle'">Begin Free <span>↗</span></button>
           </div>
           <div class="plan-card featured">
             <p class="eyebrow">Most popular</p>
@@ -91,7 +89,7 @@
               <li>Personal journal</li>
               <li>Deeper interpretations</li>
             </ul>
-            <button class="gold-button" type="button">Enter Moonlight <span>↗</span></button>
+            <button class="gold-button" type="button" onclick="window.location.href='../../index.html#ask-oracle'">Enter Moonlight <span>↗</span></button>
           </div>
           <div class="plan-card">
             <p class="eyebrow">A deeper practice</p>
@@ -108,7 +106,7 @@
               <li>Early access to new methods</li>
               <li>Priority features</li>
             </ul>
-            <button class="outline-button" type="button">Go Deeper <span>↗</span></button>
+            <button class="outline-button" type="button" onclick="window.location.href='../../index.html#ask-oracle'">Go Deeper <span>↗</span></button>
           </div>
         </div>
         <p class="fine-print">Monthly prices in EUR. Cancel anytime. Individual readings are available without a
@@ -117,7 +115,7 @@
     </main>
   </div>
 
-  <div class="readings div-light">
+  <div class="readings div-light" id="readings">
     <div class="div-heading">
       <p class="eyebrow">No subscription required</p>
       <h2>Explore individual readings.</h2>
@@ -127,42 +125,42 @@
       <div class="reading-card"><p class="eyebrow">Individual ritual</p>
         <h3>One Card Reading</h3>
         <p>A quick perspective when one question is all you need.</p>
-        <div><strong>€2.99</strong><a href="#">Begin Reading ↗</a></div>
+        <div><strong>€2.99</strong><a href="../../index.html#ask-oracle">Begin Reading ↗</a></div>
       </div>
       <div class="reading-card"><p class="eyebrow">Individual ritual</p>
         <h3>Three Card Reading</h3>
         <p>Past, present and emerging direction.</p>
-        <div><strong>€5.99</strong><a href="#">Begin Reading ↗</a></div>
+        <div><strong>€5.99</strong><a href="../../index.html#ask-oracle">Begin Reading ↗</a></div>
       </div>
       <div class="reading-card"><p class="eyebrow">Individual ritual</p>
         <h3>Deep Dive Reading</h3>
         <p>A more expansive exploration of your question.</p>
-        <div><strong>€9.99</strong><a href="#">Begin Reading ↗</a></div>
+        <div><strong>€9.99</strong><a href="../../index.html#ask-oracle">Begin Reading ↗</a></div>
       </div>
       <div class="reading-card"><p class="eyebrow">Individual ritual</p>
         <h3>Love Reading</h3>
         <p>Explore connection, attraction and emotional patterns.</p>
-        <div><strong>€6.99</strong><a href="#">Begin Reading ↗</a></div>
+        <div><strong>€6.99</strong><a href="../../index.html#ask-oracle">Begin Reading ↗</a></div>
       </div>
       <div class="reading-card"><p class="eyebrow">Individual ritual</p>
         <h3>Career Reading</h3>
         <p>Gain perspective on ambition, work and direction.</p>
-        <div><strong>€6.99</strong><a href="#">Begin Reading ↗</a></div>
+        <div><strong>€6.99</strong><a href="../../index.html#ask-oracle">Begin Reading ↗</a></div>
       </div>
       <div class="reading-card"><p class="eyebrow">Individual ritual</p>
         <h3>Relationship Reading</h3>
         <p>Explore the dynamics between you and another person.</p>
-        <div><strong>€7.99</strong><a href="#">Begin Reading ↗</a></div>
+        <div><strong>€7.99</strong><a href="../../index.html#ask-oracle">Begin Reading ↗</a></div>
       </div>
       <div class="reading-card"><p class="eyebrow">Individual ritual</p>
         <h3>Numerology Profile</h3>
         <p>Discover your core numerical patterns.</p>
-        <div><strong>€8.99</strong><a href="#">Begin Reading ↗</a></div>
+        <div><strong>€8.99</strong><a href="../../index.html#ask-oracle">Begin Reading ↗</a></div>
       </div>
       <div class="reading-card"><p class="eyebrow">Individual ritual</p>
         <h3>Full Life Reading</h3>
         <p>A comprehensive reflection across multiple areas of life.</p>
-        <div><strong>€14.99</strong><a href="#">Begin Reading ↗</a></div>
+        <div><strong>€14.99</strong><a href="../../index.html#ask-oracle">Begin Reading ↗</a></div>
       </div>
     </div>
   </div>
@@ -313,13 +311,13 @@
     </div>
   </div>
   <script>
-    document.querySelectorAll('.faq-list details').forEach((detail) => {
-      const indicator = detail.querySelector('summary span');
+    document.querySelectorAll(".faq-list details").forEach((detail) => {
+      const indicator = detail.querySelector("summary span");
       const updateIndicator = () => {
-        indicator.textContent = detail.open ? '−' : '+';
+        indicator.textContent = detail.open ? "−" : "+";
       };
 
-      detail.addEventListener('toggle', updateIndicator);
+      detail.addEventListener("toggle", updateIndicator);
       updateIndicator();
     });
   </script>
@@ -331,16 +329,20 @@
         <h1>Ancient wisdom. A new perspective.</h1>
         <p>We don't tell you your future. We help you see it differently.</p></div>
       <div class="footer-links">
-        <div class="footer-link-group"><p>EXPLORE</p><a href="#">Readings</a><a href="../pages/methods.html">Methods</a><a
-          href="../pages/oracles.html">Our Oracles</a><a href="#">Pricing</a></div>
-        <div class="footer-link-group"><p>DISCOVER</p><a href="#">Journal</a><a href="#">About</a><a href="#">Sign
-          In</a><a href="#">Begin Reading</a></div>
-        <div class="footer-link-group"><p>STAY CLOSE</p><a href="#">hello@dawnoracle.com</a><a href="#">Instagram ·
-          Pinterest</a><a href="#">Return to yourself ↗</a></div>
+        <div class="footer-link-group"><p>EXPLORE</p><a href="../../index.html">Readings</a><a href="methods.html">Methods</a><a
+          href="oracles.html">Our Oracles</a><a href="pricing.html">Pricing</a></div>
+        <div class="footer-link-group"><p>DISCOVER</p><a href="../../index.html#journal">Journal</a><a
+          href="../../index.html">About</a><a href="../../index.html">Sign
+          In</a><a href="../../index.html#journal">Begin Reading</a></div>
+        <div class="footer-link-group"><p>STAY CLOSE</p><a href="mailto:hello@dawnoracle.com">hello@dawnoracle.com</a><a
+          href="https://www.instagram.com/" rel="noreferrer">Instagram</a><a href="https://www.pinterest.com/"
+                                                                             rel="noreferrer">Pinterest</a><a
+          href="../../index.html">Return to yourself ↗</a></div>
       </div>
     </div>
     <div class="footer-bottom"><p>© 2025 Dawn Oracle. For reflection, not divine prediction.</p>
-      <div><a href="#">Privacy</a><span>·</span><a href="#">Terms</a><span>·</span><a href="#">Accessibility</a></div>
+      <div><a href="../../index.html">Privacy</a><span>·</span><a href="../../index.html">Terms</a><span>·</span><a
+        href="../../index.html">Accessibility</a></div>
     </div>
   </footer>
 </div>
