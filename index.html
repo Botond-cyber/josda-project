@@ -18,10 +18,10 @@
 <div class="container">
   <!--Header-->
   <header>
-    <div class="header-logo">
-      <img src="/src/assets/dawn-monogram.svg" alt="logo" />
+    <a class="header-logo" href="index.html" aria-label="Dawn Oracle home">
+      <img src="/src/assets/dawn-monogram.svg" alt="" />
       <p>DAWN ORACLE</p>
-    </div>
+    </a>
 
     <nav class="nav" id="main-navigation" aria-label="Main navigation">
       <div class="nav-item"><a href="src/pages/methods.html">Methods</a>
@@ -33,14 +33,14 @@
       <div class="nav-item"><a href="src/pages/pricing.html">Pricing</a>
         <div class="nav-underline"></div>
       </div>
-      <div class="nav-item"><a href="/index.html">About</a>
+      <div class="nav-item"><a href="#about">About</a>
         <div class="nav-underline"></div>
       </div>
     </nav>
 
     <div class="login-btn-container">
-      <a class="sign-in-btn" href="#ask-oracle">Sign In</a>
-      <button class="begin-btn" type="button" onclick="window.location.href='#journal'">
+      <a class="sign-in-btn" href="#">Sign In</a>
+      <button class="begin-btn" type="button" onclick="window.location.href='#ask-oracle'">
         <span>Begin Reading</span>
         <img src="src/assets/arrow.svg" alt="arrow icon" />
       </button>
@@ -53,7 +53,7 @@
         <h1>Find clarity in the unknown.</h1>
         <h2>Ancient symbols. Modern reflection. A quiet space to ask the questions that matter.</h2>
         <div class="hero-buttons">
-          <button class="begin-btn" type="button" onclick="window.location.href='#journal'">
+          <button class="begin-btn" type="button" onclick="window.location.href='#ask-oracle'">
             <span>Begin Reading</span>
             <img src="src/assets/arrow.svg" alt="arrow icon" />
           </button>
@@ -203,7 +203,7 @@
         <p>Clarity · Relationships · Choices · Archetypes</p>
       </div>
       <div class="method-card-footer">
-        <a href="src/pages/methods.html">Begin a Tarot Reading ↗</a>
+        <a href="src/pages/methods.html#tarot">Begin a Tarot Reading ↗</a>
         <div></div>
       </div>
     </div>
@@ -218,7 +218,7 @@
         <p>Emotion · Intuition · Cycles · Inner reflection</p>
       </div>
       <div class="method-card-footer">
-        <a href="src/pages/methods.html">Enter the Moon Oracle ↗</a>
+        <a href="src/pages/methods.html#moon-oracle">Enter the Moon Oracle ↗</a>
         <div></div>
       </div>
     </div>
@@ -233,7 +233,7 @@
         <p>Change · Decisions · Balance · Direction</p>
       </div>
       <div class="method-card-footer">
-        <a href="src/pages/methods.html">Consult the I Ching ↗</a>
+        <a href="src/pages/methods.html#iching">Consult the I Ching ↗</a>
         <div></div>
       </div>
     </div>
@@ -248,7 +248,7 @@
         <p>Identity · Patterns · Life paths · Personal timing</p>
       </div>
       <div class="method-card-footer">
-        <a href="src/pages/methods.html">Calculate My Numbers ↗</a>
+        <a href="src/pages/methods.html#numerology">Calculate My Numbers ↗</a>
         <div></div>
       </div>
     </div>
@@ -271,22 +271,21 @@
       <div class="oracle-card-text">
         <h5>Tarot</h5>
         <h4>The Seer</h4>
-        <p>Tarot &amp; archetypal readings</p><a href="src/pages/oracles.html">Ask The Seer ↗</a>
+        <p>Tarot &amp; archetypal readings</p><a href="src/pages/oracles.html#seer">Ask The Seer ↗</a>
       </div>
     </div>
     <div class="calling-card oracle-card"><img src="src/assets/oracle2.png" alt="">
       <div class="oracle-card-text">
         <h5>Moon oracle</h5>
         <h4>The Moonkeeper</h4>
-        <p>Cycles, intuition &amp; emotional clarity</p><a href="src/pages/oracles.html">Ask The Moonkeeper ↗</a>
+        <p>Cycles, intuition &amp; emotional clarity</p><a href="src/pages/oracles.html#moonkeeper">Ask The Moonkeeper ↗</a>
       </div>
     </div>
     <div class="calling-card oracle-card"><img src="src/assets/oracle3.png" alt="">
       <div class="oracle-card-text">
         <h5>I Ching</h5>
         <h4>The Sage</h4>
-        <h4>The Sage</h4>
-        <p>Ancient wisdom &amp; the I Ching</p><a href="src/pages/oracles.html">Ask The Sage ↗</a>
+        <p>Ancient wisdom &amp; the I Ching</p><a href="src/pages/oracles.html#sage">Ask The Sage ↗</a>
       </div>
     </div>
   </div>
@@ -485,9 +484,9 @@
       <div class="footer-link-group">
         <p>DISCOVER</p>
         <a href="index.html#journal">Journal</a>
-        <a href="index.html">About</a>
-        <a href="index.html">Sign In</a>
-        <a href="index.html#journal">Begin Reading</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#ask-oracle">Sign In</a>
+        <a href="index.html#ask-oracle">Begin Reading</a>
       </div>
       <div class="footer-link-group">
         <p>STAY CLOSE</p>

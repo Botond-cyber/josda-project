@@ -217,6 +217,7 @@ body p {
     display: flex;
     margin-top: 1.5rem;
     justify-content: space-evenly;
+    align-items: stretch;
     gap: 3rem;
     flex-direction: row;
     flex-wrap: wrap;
@@ -225,12 +226,26 @@ body p {
 }
 
 .calling-card {
-
+    display: flex;
+    flex-direction: column;
     width: 30%;
     min-width: 25rem;
 }
-.calling-card img {
+.calling-card .oracle-card-text {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+.calling-card > img {
+    display: block;
     width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    transition: scale 0.35s ease;
+}
+
+.calling-card > img:hover {
+    scale: 1.04;
 }
 
 
@@ -250,6 +265,8 @@ body p {
     color: var(--surface-primary-dark);
     display: inline-block;
     position: relative;
+    width: fit-content;
+    margin-top: auto;
     text-decoration: none;
     font-family: "Inter";
 }
@@ -580,7 +597,8 @@ body p {
 }
 .oracle-btn .ask-btn {
     margin: 2rem auto auto;
-    max-width: 20rem;
+    width: fit-content;
+    max-width: 100%;
 }
 
 .reading-container {
@@ -869,6 +887,12 @@ body p {
     border: 1px solid var(--grey-stroke);
     border-radius: 0.75rem;
     background-color: var(--surface-card);
+    transition: scale 0.25s ease-in-out;
+}
+
+.pricing-card:hover,
+.pricing-card:focus-within {
+    scale: 1.025;
 }
 
 .pricing-card-popular {
@@ -984,6 +1008,21 @@ body p {
     gap: 1.5rem;
 }
 
+.journal-cards > div {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.75rem;
+    transition: scale 0.25s ease-in-out, border-color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+}
+
+.journal-cards > div:hover,
+.journal-cards > div:focus-within {
+    scale: 1.025;
+    background-color: color-mix(in srgb, var(--surface-higlight) 70%, transparent);
+}
+
 .journal-cards img {
     display: block;
     width: 100%;
@@ -1012,6 +1051,11 @@ body p {
     position: relative;
     font-family: "Inter";
     text-decoration: none;
+}
+
+.journal-cards a {
+    align-self: flex-start;
+    margin-top: auto;
 }
 
 .journal-cards a::after,
