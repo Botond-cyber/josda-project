@@ -13,11 +13,11 @@
   padding: 5rem 6rem;
 }
 .oracle-hero {
-  min-height: 34rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   align-items: start;
+  min-height: 34rem;
   color: var(--surface-primary-light);
   background: var(--surface-primary-dark);
 }
@@ -36,8 +36,8 @@
 }
 .oracle-hero-copy {
   align-self: end;
+  justify-self: end;
   max-width: 28rem;
-  padding-bottom: 5rem;
   color: var(--text-primary-light);
 }
 .oracle-hero-copy h2 {
@@ -54,24 +54,46 @@
 .oracle-hero-collage {
   grid-column: 1 / -1;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0.75rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.75rem;
   align-items: end;
 }
-.oracle-hero-collage img {
+.oracle-hero-figure {
+  min-width: 0;
+  margin: 0;
+}
+.oracle-hero-figure:nth-child(even) {
+  transform: translateY(2.5rem);
+}
+.oracle-hero-figure img {
+  display: block;
   width: 100%;
-  height: auto;
-  aspect-ratio: 510 / 740;
-  object-fit: contain;
-  border-radius: 0.25rem;
+  height: 100%;
+  aspect-ratio: 0.9;
+  object-fit: cover;
+}
+.oracle-hero-figure .oracle-image-frame {
+  width: 100%;
+  aspect-ratio: 0.9;
+  border-radius: 0.6rem;
+}
+.oracle-hero-figure figcaption {
+  margin-top: 1.5rem;
+  color: var(--surface-higlight);
+  font-size: 0.7rem;
+  text-transform: uppercase;
 }
 .oracle-directory {
+  padding-inline: clamp(1.25rem, 5.5vw, 6rem);
   background: var(--surface-primary-light);
+}
+.oracle-directory .section-intro .eyebrow {
+  color: var(--text-secondary);
 }
 .section-intro h2 {
   margin: 0.5rem 0;
   font:
-    lighter clamp(2.75rem, 4vw, 4rem) "Cormorant Garamond",
+    lighter clamp(2.75rem, 4vw, 3.5rem) "Cormorant Garamond",
     cursive;
 }
 .section-intro > p:last-child {
@@ -81,46 +103,98 @@
 }
 .oracle-card-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0.8rem;
-  margin-top: 2.5rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 2rem;
+  margin-top: 2rem;
 }
 .oracle-card {
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 0.8rem;
+  min-width: 0;
+  padding: 0.65rem;
+  border: 1px solid var(--surface-higlight);
+  border-radius: 0.65rem;
   color: var(--surface-primary-light);
   background: var(--surface-card);
-  border-radius: 0.3rem;
   text-decoration: none;
-  transition: transform 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
-.oracle-card:hover {
-  transform: translateY(-0.35rem);
+.oracle-card:hover,
+.oracle-card:focus-visible {
+  z-index: 1;
+  transform: scale(1.04);
+  border-color: var(--surface-higlight);
+  box-shadow: 0 0.75rem 1.5rem rgb(16 19 28 / 18%);
+}
+.oracle-card .oracle-image-frame {
+  width: 100%;
+  aspect-ratio: 1.05;
+  border-radius: 0.45rem;
 }
 .oracle-card img {
+  display: block;
   width: 100%;
-  aspect-ratio: 0.78;
+  height: 100%;
   object-fit: cover;
   object-position: top;
-  border-radius: 0.15rem;
 }
-.oracle-card-number {
+.oracle-card-category {
   margin-top: 0.8rem;
   color: var(--surface-higlight);
   font-size: 0.7rem;
+  text-transform: uppercase;
 }
 .oracle-card h3 {
-  margin: 0.25rem 0;
+  margin: 0.45rem 0 0.35rem;
   font:
-    lighter 1.4rem "Cormorant Garamond",
+    lighter 1.55rem "Cormorant Garamond",
     cursive;
 }
 .oracle-card p {
-  margin: 0;
+  margin: 0 0 0.65rem;
   color: var(--text-primary-light);
-  font-size: 0.85rem;
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+.oracle-card .oracle-card-tagline {
+  margin-bottom: 0.75rem;
+  font-size: 0.8rem;
+}
+.oracle-card .oracle-card-meta {
+  margin-bottom: 0.55rem;
+}
+.oracle-card .oracle-card-description {
+  margin-top: 0.15rem;
+}
+.oracle-card-link {
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+  margin-top: auto;
+  padding-top: 0.15rem;
+  color: var(--surface-higlight);
+  font-size: 0.75rem;
+}
+.oracle-card-link::after {
+  position: absolute;
+  right: 0;
+  bottom: -0.2rem;
+  left: 0;
+  height: 1px;
+  background-color: var(--surface-higlight);
+  content: "";
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease-in-out;
+}
+.oracle-card:hover .oracle-card-link::after,
+.oracle-card:focus-visible .oracle-card-link::after {
+  transform: scaleX(1);
 }
 .oracle-detail {
   display: grid;
@@ -136,6 +210,145 @@
 .oracle-detail-dark {
   color: var(--surface-primary-light);
   background: var(--surface-primary-dark);
+}
+.oracle-detail-featured {
+  width: 100%;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 3rem;
+  align-items: center;
+  padding: 4rem 6rem;
+}
+.oracle-detail.oracle-detail-featured > .oracle-image-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.oracle-detail.oracle-detail-featured > .oracle-image-frame {
+  width: min(100%, 26rem);
+  height: min(37.7rem, 133vw);
+  aspect-ratio: 0.69;
+  min-width: 0;
+  justify-self: center;
+  border-radius: 0.6rem;
+}
+.oracle-detail-featured .oracle-detail-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  min-width: 0;
+  max-width: 36rem;
+}
+.moonkeeper-panel {
+  background: var(--surface-primary-light);
+  color: var(--surface-primary-dark);
+  grid-template-areas: "image content";
+}
+.moonkeeper-panel > .oracle-image-frame {
+  grid-area: image;
+}
+.moonkeeper-panel .oracle-detail-content {
+  grid-area: content;
+}
+.moonkeeper-panel .eyebrow,
+.moonkeeper-panel .oracle-feature-label {
+  color: var(--text-secondary);
+}
+.moonkeeper-panel .oracle-feature-meta > div > span:last-child {
+  color: var(--text-secondary);
+}
+.moonkeeper-panel .oracle-detail-description {
+  color: var(--text-secondary);
+}
+.moonkeeper-panel .oracle-feature-method {
+  color: var(--text-secondary);
+}
+#weaver.oracle-detail-featured {
+  grid-template-areas: "image content";
+}
+#weaver.oracle-detail-featured .eyebrow,
+#weaver.oracle-detail-featured .oracle-feature-label {
+  color: var(--text-secondary);
+}
+#weaver.oracle-detail-featured .oracle-detail-content {
+  grid-area: content;
+}
+#weaver.oracle-detail-featured > .oracle-image-frame {
+  grid-area: image;
+}
+.oracle-detail-featured .eyebrow,
+.oracle-feature-label {
+  color: var(--surface-higlight);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+}
+.oracle-detail-featured h2 {
+  margin: 1rem 0 0.6rem;
+}
+.oracle-detail-featured h3 {
+  margin-bottom: 1rem;
+  color: var(--surface-primary-light);
+  font-size: 1.6rem;
+}
+.oracle-detail-featured .oracle-detail-description {
+  margin: 0 0 1.1rem;
+}
+.oracle-detail-featured .oracle-feature-meta {
+  gap: 1.5rem;
+  padding: 1rem 0;
+  border-bottom: 0;
+  text-transform: none;
+}
+.oracle-feature-meta > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.oracle-feature-meta > div > span:last-child {
+  color: var(--text-primary-light);
+  line-height: 1.5;
+}
+.oracle-feature-method {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin: 0.4rem 0 1rem;
+}
+.oracle-feature-questions > .oracle-feature-label {
+  margin-bottom: 0.8rem;
+}
+.oracle-detail-featured .oracle-quote {
+  margin: 0 0 0.65rem;
+  color: var(--text-primary-light);
+  font-size: 1.2rem;
+}
+.oracle-detail-featured .begin-btn {
+  min-height: 2.75rem;
+  margin-top: 1.25rem;
+  padding: 0.65rem 1.1rem;
+  font-size: 0.75rem;
+}
+.oracle-detail-featured.oracle-detail-light h3 {
+  color: var(--surface-primary-dark);
+}
+.oracle-detail-featured.oracle-detail-light .oracle-feature-meta > div > span:last-child,
+.oracle-detail-featured.oracle-detail-light .oracle-quote {
+  color: var(--text-secondary);
+}
+.moonkeeper-panel.oracle-detail-featured h3,
+.moonkeeper-panel.oracle-detail-featured .oracle-quote {
+  color: var(--surface-primary-dark);
+}
+#weaver.oracle-detail-featured h3,
+#weaver.oracle-detail-featured .oracle-detail-description,
+#weaver.oracle-detail-featured .oracle-feature-meta > div > span:last-child,
+#weaver.oracle-detail-featured .oracle-feature-method,
+#weaver.oracle-detail-featured .oracle-quote {
+  color: var(--text-secondary);
+}
+#weaver {
+  background-color: var(--surface-card-light);
 }
 .oracle-detail > img {
   width: min(100%, 22rem);
@@ -209,6 +422,10 @@
   color: var(--text-secondary);
   font-size: 1.05rem;
 }
+.oracle-question .eyebrow, .oracle-others .eyebrow {
+  font-size: 0.75rem;
+}
+
 .question-options {
   display: flex;
   flex-direction: column;
@@ -237,54 +454,110 @@
   background: var(--surface-card-light);
 }
 .oracle-others > p:not(.eyebrow) {
-  max-width: 42rem;
+  max-width: 46rem;
+  margin: 1rem 0 2.5rem;
 }
 .oracle-mini-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0.8rem;
-  margin: 2rem 0;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin: 0 0 2.5rem;
 }
 .oracle-mini-grid a {
+  display: block;
+  position: relative;
+  min-width: 0;
   color: var(--surface-primary-dark);
   text-decoration: none;
+  transition: transform 0.35s ease;
+}
+.oracle-mini-grid a:hover,
+.oracle-mini-grid a:focus-visible {
+  z-index: 1;
+  transform: scale(1.05);
+}
+.oracle-mini-grid .oracle-image-frame {
+  width: 100%;
+  aspect-ratio: 1.26;
+  border-radius: 0.6rem;
 }
 .oracle-mini-grid img {
+  display: block;
   width: 100%;
-  aspect-ratio: 1.35;
+  height: 100%;
   object-fit: cover;
-  object-position: top;
-  border-radius: 0.25rem;
+  object-position: center 25%;
+}
+.oracle-image-frame {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  transition: transform 0.35s ease;
+}
+.oracle-hero-figure:hover .oracle-image-frame,
+.oracle-detail-featured > .oracle-image-frame:hover {
+  z-index: 1;
+  transform: scale(1.05);
 }
 .oracle-mini-grid span {
   display: block;
-  margin-top: 0.4rem;
+  margin-top: 0.7rem;
   font:
-    1.1rem "Cormorant Garamond",
+    1.5rem "Cormorant Garamond",
     cursive;
 }
 .oracle-others .begin-btn {
-  padding: 0.7rem 1rem;
+  min-height: 3.2rem;
+  padding: 0.8rem 1.25rem;
   font-size: 0.8rem;
 }
 .oracle-cta {
-  padding: 6rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem max(5.5vw, 2rem);
   color: var(--surface-primary-light);
   background: var(--surface-primary-dark);
   text-align: center;
+}
+.oracle-cta .eyebrow {
+  margin: 0;
+  color: var(--surface-higlight);
+  font-size: 0.875rem;
+}
+.oracle-cta h2 {
+  margin: 2rem 0 3rem;
+  color: var(--surface-primary-light);
+  font:
+    lighter 6rem/1 "Cormorant Garamond",
+    cursive;
 }
 .oracle-cta > div {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 0.6rem;
+  gap: 1rem;
 }
 .oracle-cta .begin-btn {
-  padding: 0.65rem 1rem;
+  min-width: 11.5rem;
+  min-height: 3.25rem;
+  padding: 0.8rem 1.25rem;
   color: var(--surface-higlight);
   background: transparent;
   border: 1px solid var(--surface-higlight);
-  font-size: 0.75rem;
+  font-size: 0.85rem;
+}
+.oracle-cta .begin-btn:first-child {
+  color: var(--surface-primary-dark);
+  background: var(--surface-higlight);
+}
+@media (max-width: 1100px) {
+  .oracle-hero-collage {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .oracle-hero-figure:nth-child(even) {
+    transform: none;
+  }
 }
 @media (max-width: 900px) {
   .oracle-hero,
@@ -292,19 +565,45 @@
   .oracle-question {
     grid-template-columns: 1fr;
   }
+  .oracle-detail-featured {
+    width: 100%;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+  }
+  #moonkeeper.oracle-detail-featured {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "image"
+      "content";
+  }
+  #weaver.oracle-detail-featured {
+    grid-template-areas:
+      "image"
+      "content";
+  }
+  .oracle-detail.oracle-detail-featured > .oracle-image-frame {
+    width: min(100%, 26rem);
+    height: min(37.7rem, 133vw);
+    justify-self: center;
+  }
+  .oracle-hero {
+    padding: 4rem 3rem;
+  }
   .oracle-hero-copy {
+    justify-self: start;
     padding: 0;
+  }
+  .oracle-directory {
+    padding: 4rem 3rem;
   }
   .oracle-card-grid,
   .oracle-mini-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
   }
-  .oracle-detail > img {
+  .oracle-detail > .oracle-image-frame {
     width: min(100%, 20rem);
-    height: auto;
-  }
-  .oracle-detail-light > img {
-    grid-row: 1;
+    height: min(37.7rem, 133vw);
   }
 }
 @media (max-width: 600px) {
@@ -317,7 +616,10 @@
   }
   .oracle-hero-collage {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.35rem;
+    gap: 1.5rem;
+  }
+  .oracle-hero-figure:nth-child(even) {
+    transform: none;
   }
   .oracle-hero h1 {
     font-size: 3.5rem;
@@ -336,12 +638,12 @@
   .oracle-others > p {
     font-size: 0.95rem;
   }
-  .oracle-hero-collage img {
-    height: auto;
-  }
   .oracle-card-grid,
   .oracle-mini-grid {
-    gap: 0.5rem;
+    gap: 1.5rem;
+  }
+  .oracle-card-grid {
+    grid-template-columns: 1fr;
   }
   .oracle-question {
     gap: 2rem;
@@ -352,5 +654,15 @@
   .oracle-detail > img {
     width: min(100%, 20rem);
     height: auto;
+  }
+  .oracle-feature-meta {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .oracle-detail-featured .oracle-quote {
+    font-size: 1.05rem;
+  }
+  .oracle-detail-featured .begin-btn {
+    margin-top: 1rem;
   }
 }

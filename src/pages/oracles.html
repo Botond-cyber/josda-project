@@ -12,12 +12,11 @@
 </head>
 <body>
 <div class="container oracle-page">
-  <!--Header-->
   <header>
-    <div class="header-logo">
-      <img src="/src/assets/dawn-monogram.svg" alt="logo" />
+    <a class="header-logo" href="../../index.html" aria-label="Dawn Oracle home">
+      <img src="/src/assets/dawn-monogram.svg" alt="" />
       <p>DAWN ORACLE</p>
-    </div>
+    </a>
 
     <nav class="nav" id="main-navigation" aria-label="Main navigation">
       <div class="nav-item"><a href="./methods.html">Methods</a>
@@ -29,13 +28,13 @@
       <div class="nav-item"><a href="./pricing.html">Pricing</a>
         <div class="nav-underline"></div>
       </div>
-      <div class="nav-item"><a href="/index.html">About</a>
+      <div class="nav-item"><a href="../../index.html#about">About</a>
         <div class="nav-underline"></div>
       </div>
     </nav>
 
     <div class="login-btn-container">
-      <a class="sign-in-btn" href="../../index.html#ask-oracle">Sign In</a>
+      <a class="sign-in-btn" href="#">Sign In</a>
       <button class="begin-btn" type="button" onclick="window.location.href='../../index.html#ask-oracle'">
         <span>Begin Reading</span>
         <img src="../assets/arrow.svg" alt="arrow icon" />
@@ -45,144 +44,225 @@
   <main>
     <section class="oracle-hero">
       <div>
-        <p class="eyebrow">A visit with four guides</p>
+        <p class="eyebrow">A voice for every doorway</p>
         <h1>Meet the<br />Oracles.</h1>
       </div>
       <div class="oracle-hero-copy">
-        <h2>Four voices. Your way of seeing.</h2>
+        <h2>Four voices. Four ways of seeing.</h2>
         <p>
           Ancient wisdom, held in four distinct perspectives. Find the voice that meets your
           question.
         </p>
       </div>
       <div class="oracle-hero-collage">
-        <img src="../assets/seeker.png" alt="The Seer" />
-        <img src="../assets/moonkeeper.png" alt="The Moonkeeper" />
-        <img src="../assets/sage.png" alt="The Sage" />
-        <img src="../assets/weaver.png" alt="The Weaver" />
+        <figure class="oracle-hero-figure">
+          <span class="oracle-image-frame"><img src="../assets/seeker.png" alt="The Seer" /></span>
+          <figcaption>The Seer</figcaption>
+        </figure>
+        <figure class="oracle-hero-figure">
+          <span class="oracle-image-frame"><img src="../assets/moonkeeper.png" alt="The Moonkeeper" /></span>
+          <figcaption>The Moonkeeper</figcaption>
+        </figure>
+        <figure class="oracle-hero-figure">
+          <span class="oracle-image-frame"><img src="../assets/sage.png" alt="The Sage" /></span>
+          <figcaption>The Sage</figcaption>
+        </figure>
+        <figure class="oracle-hero-figure">
+          <span class="oracle-image-frame"><img src="../assets/weaver.png" alt="The Weaver" /></span>
+          <figcaption>The Weaver</figcaption>
+        </figure>
       </div>
     </section>
 
     <section class="oracle-directory">
       <div class="section-intro">
-        <p class="eyebrow">Find the voice that meets your question</p>
+        <p class="eyebrow">Who feels closest to your question?</p>
         <h2>Find your Oracle</h2>
         <p>Every question has a different doorway.</p>
       </div>
       <div class="oracle-card-grid">
-        <a class="oracle-card" href="#seer"
-        ><img src="../assets/seeker.png" alt="" /><span class="oracle-card-number">01</span>
+        <a class="oracle-card" href="#seer">
+          <span class="oracle-image-frame"><img src="../assets/seeker.png" alt="" /></span>
+          <span class="oracle-card-category">Tarot</span>
           <h3>The Seer</h3>
-          <p>Perspective for what lies ahead.</p></a
-        >
-        <a class="oracle-card" href="#moonkeeper"
-        ><img src="../assets/moonkeeper.png" alt="" /><span class="oracle-card-number"
-        >02</span
-        >
+          <p class="oracle-card-tagline">The reader of symbols.</p>
+          <p class="oracle-card-meta">Intuitive · Perceptive · Reflective · Direct</p>
+          <p class="oracle-card-meta">Specialties: Love · Relationships · Crossroads · Career</p>
+          <p class="oracle-card-description">
+            The Seer reads the symbols beneath the question, helping you notice patterns, tensions
+            and possibilities that may already be present.
+          </p>
+          <span class="oracle-card-link">Ask The Seer ↗</span>
+        </a>
+        <a class="oracle-card" href="#moonkeeper">
+          <span class="oracle-image-frame"><img src="../assets/moonkeeper.png" alt="" /></span>
+          <span class="oracle-card-category">Moon Oracle</span>
           <h3>The Moonkeeper</h3>
-          <p>Listen to what moves beneath.</p></a
-        >
-        <a class="oracle-card" href="#sage"
-        ><img src="../assets/sage.png" alt="" /><span class="oracle-card-number">03</span>
+          <p class="oracle-card-tagline">Listener to cycles and intuition.</p>
+          <p class="oracle-card-meta">Gentle · Intuitive · Reflective · Emotionally aware</p>
+          <p class="oracle-card-meta">Specialties: Relationships · Emotions · Cycles · Inner growth</p>
+          <p class="oracle-card-description">
+            The Moonkeeper helps you listen to the quieter signals beneath the surface — emotions,
+            intuition, timing and change.
+          </p>
+          <span class="oracle-card-link">Ask The Moonkeeper ↗</span>
+        </a>
+        <a class="oracle-card" href="#sage">
+          <span class="oracle-image-frame"><img src="../assets/sage.png" alt="" /></span>
+          <span class="oracle-card-category">I Ching</span>
           <h3>The Sage</h3>
-          <p>Guidance through change.</p></a
-        >
-        <a class="oracle-card" href="#weaver"
-        ><img src="../assets/weaver.png" alt="" /><span class="oracle-card-number">04</span>
+          <p class="oracle-card-tagline">Guide through change.</p>
+          <p class="oracle-card-meta">Wise · Calm · Philosophical · Grounded</p>
+          <p class="oracle-card-meta">Specialties: Decisions · Change · Balance · Direction</p>
+          <p class="oracle-card-description">
+            The Sage offers a slower perspective, helping you understand movement, balance and the
+            forces shaping a decision.
+          </p>
+          <span class="oracle-card-link">Consult The Sage ↗</span>
+        </a>
+        <a class="oracle-card" href="#weaver">
+          <span class="oracle-image-frame"><img src="../assets/weaver.png" alt="" /></span>
+          <span class="oracle-card-category">Numerology</span>
           <h3>The Weaver</h3>
-          <p>Interpret the patterns.</p></a
-        >
+          <p class="oracle-card-tagline">Interpreter of patterns.</p>
+          <p class="oracle-card-meta">Analytical · Curious · Observant · Pattern-focused</p>
+          <p class="oracle-card-meta">Specialties: Identity · Life paths · Cycles · Personal timing</p>
+          <p class="oracle-card-description">
+            The Weaver looks for patterns across numbers, dates and cycles, offering a different
+            lens through which to understand yourself.
+          </p>
+          <span class="oracle-card-link">Ask The Weaver ↗</span>
+        </a>
       </div>
     </section>
 
-    <section class="oracle-detail oracle-detail-dark" id="seer">
-      <img src="../assets/seeker.png" alt="The Seer" />
-      <div>
-        <p class="eyebrow">Oracle 01</p>
+    <section class="oracle-detail oracle-detail-dark oracle-detail-featured" id="seer">
+      <span class="oracle-image-frame"><img src="../assets/seeker.png" alt="The Seer" /></span>
+      <div class="oracle-detail-content">
+        <p class="eyebrow">Oracle 01 · Tarot</p>
         <h2>THE SEER</h2>
-        <h3>For the patterns beneath the question.</h3>
-        <p>
-          The Seer notices the possibilities beneath the question, helping you notice patterns,
-          tensions and opportunities that may already be present.
+        <h3>The reader of symbols.</h3>
+        <p class="oracle-detail-description">
+          The Seer reads the symbols beneath the question, helping you notice patterns, tensions
+          and possibilities that may already be present.
         </p>
-        <div class="oracle-meta">
-              <span>Perspective<br />Intuitive · Reflective · Direct</span
-              ><span>Specialties<br />Relationships · Crossroads · Career</span>
+        <div class="oracle-meta oracle-feature-meta">
+          <div>
+            <span class="oracle-feature-label">Personality</span>
+            <span>Intuitive · Perceptive · Reflective · Direct</span>
+          </div>
+          <div>
+            <span class="oracle-feature-label">Specialties</span>
+            <span>Love · Relationships · Crossroads · Career</span>
+          </div>
         </div>
-        <p class="oracle-quote">
-          “What am I not seeing clearly?”<br />“Is this helping become a future of my choosing?”
-        </p>
-        <button class="begin-btn" type="button" onclick="window.location.href='#seer'">
-          <span>Ask The Seer</span><img src="../assets/arrow.svg" alt="" />
+        <p class="oracle-feature-method"><span class="oracle-feature-label">Method</span>Tarot</p>
+        <div class="oracle-feature-questions">
+          <p class="oracle-feature-label">Example questions</p>
+          <p class="oracle-quote">“What am I not seeing clearly?”</p>
+          <p class="oracle-quote">“What is happening beneath the surface of this relationship?”</p>
+          <p class="oracle-quote">“Which path deserves my attention?”</p>
+        </div>
+        <button class="begin-btn" type="button" onclick="window.location.href='../../index.html#ask-oracle'">
+          <span>Ask The Seer ↗</span>
         </button>
       </div>
     </section>
-    <section class="oracle-detail oracle-detail-light" id="moonkeeper">
-      <div>
-        <p class="eyebrow">Oracle 02</p>
+    <section class="oracle-detail oracle-detail-featured moonkeeper-panel" id="moonkeeper">
+      <span class="oracle-image-frame"><img src="../assets/moonkeeper.png" alt="The Moonkeeper standing beside a moonlit window" /></span>
+      <div class="oracle-detail-content">
+        <p class="eyebrow">Oracle 02 · Moon Oracle</p>
         <h2>THE MOONKEEPER</h2>
         <h3>Listen to cycles and intuition.</h3>
-        <p>
+        <p class="oracle-detail-description">
           The Moonkeeper helps you listen to the quieter signals beneath the surface — emotions,
           intuition, timing and change.
         </p>
-        <div class="oracle-meta">
-              <span>Perspective<br />Emotional · Reflective · Intuitive</span
-              ><span>Specialties<br />Relationships · Cycles · Inner growth</span>
+        <div class="oracle-meta oracle-feature-meta">
+          <div>
+            <span class="oracle-feature-label">Personality</span>
+            <span>Gentle · Intuitive · Reflective · Emotionally aware</span>
+          </div>
+          <div>
+            <span class="oracle-feature-label">Specialties</span>
+            <span>Relationships · Emotions · Cycles · Inner growth</span>
+          </div>
         </div>
-        <p class="oracle-quote">
-          “What am I feeling beneath the surface?”<br />“What cycle am I moving through?”
-        </p>
-        <button class="begin-btn" type="button" onclick="window.location.href='#moonkeeper'">
-          <span>Ask The Moonkeeper</span><img src="../assets/arrow.svg" alt="" />
+        <p class="oracle-feature-method"><span class="oracle-feature-label">Method · Moon Oracle</span></p>
+        <div class="oracle-feature-questions">
+          <p class="oracle-feature-label">Example questions</p>
+          <p class="oracle-quote">“What am I feeling beneath the surface?”</p>
+          <p class="oracle-quote">“What cycle am I moving through?”</p>
+          <p class="oracle-quote">“What needs to be released?”</p>
+        </div>
+        <button class="begin-btn" type="button" onclick="window.location.href='../../index.html#ask-oracle'">
+          <span>Ask The Moonkeeper&nbsp; ↗</span>
         </button>
       </div>
-      <img src="../assets/moonkeeper.png" alt="The Moonkeeper" />
     </section>
-    <section class="oracle-detail oracle-detail-dark" id="sage">
-      <img src="../assets/sage.png" alt="The Sage" />
-      <div>
-        <p class="eyebrow">Oracle 03</p>
+    <section class="oracle-detail oracle-detail-dark oracle-detail-featured" id="sage">
+      <span class="oracle-image-frame"><img src="../assets/sage.png" alt="The Sage" /></span>
+      <div class="oracle-detail-content">
+        <p class="eyebrow">Oracle 03 · I Ching</p>
         <h2>THE SAGE</h2>
         <h3>Guide through change.</h3>
-        <p>
+        <p class="oracle-detail-description">
           The Sage offers a slower perspective, helping you understand movement, change and the
           forces shaping a decision.
         </p>
-        <div class="oracle-meta">
-              <span>Perspective<br />Wise · Calm · Philosophical</span
-              ><span>Specialties<br />Change · Balance · Direction</span>
+        <div class="oracle-meta oracle-feature-meta">
+          <div>
+            <span class="oracle-feature-label">Personality</span>
+            <span>Wise · Calm · Philosophical · Grounded</span>
+          </div>
+          <div>
+            <span class="oracle-feature-label">Specialties</span>
+            <span>Decisions · Change · Balance · Direction</span>
+          </div>
         </div>
-        <p class="oracle-quote">
-          “What should I understand about this moment?”<br />“What is the nature of this
-          transition?”
-        </p>
-        <button class="begin-btn" type="button" onclick="window.location.href='#sage'">
-          <span>Consult The Sage</span><img src="../assets/arrow.svg" alt="" />
+        <p class="oracle-feature-method"><span class="oracle-feature-label">Method · I Ching</span></p>
+        <div class="oracle-feature-questions">
+          <p class="oracle-feature-label">Example questions</p>
+          <p class="oracle-quote">“What should I understand about this transition?”</p>
+          <p class="oracle-quote">“What is the nature of this situation?”</p>
+          <p class="oracle-quote">“Where is change asking me to move?”</p>
+        </div>
+        <button class="begin-btn" type="button" onclick="window.location.href='../../index.html#ask-oracle'">
+          <span>Consult The Sage&nbsp; ↗</span>
         </button>
       </div>
     </section>
-    <section class="oracle-detail oracle-detail-light" id="weaver">
-      <div>
-        <p class="eyebrow">Oracle 04</p>
+    <section class="oracle-detail oracle-detail-light oracle-detail-featured" id="weaver">
+      <span class="oracle-image-frame"><img src="../assets/weaver.png" alt="The Weaver" /></span>
+      <div class="oracle-detail-content">
+        <p class="eyebrow">Oracle 04 · Numerology</p>
         <h2>THE WEAVER</h2>
-        <h3>Interpret the patterns.</h3>
-        <p>
-          The Weaver looks for patterns across numbers, dates and cycles, offering a different
-          lens through which to understand yourself.
+        <h3>Interpreter of patterns.</h3>
+        <p class="oracle-detail-description">
+          The Weaver looks for patterns across numbers, dates and cycles, offering a different lens
+          through which to understand yourself.
         </p>
-        <div class="oracle-meta">
-              <span>Perspective<br />Analytical · Curious · Patient</span
-              ><span>Specialties<br />Identity · Life paths · Personal timing</span>
+        <div class="oracle-meta oracle-feature-meta">
+          <div>
+            <span class="oracle-feature-label">Personality</span>
+            <span>Analytical · Curious · Observant · Pattern-focused</span>
+          </div>
+          <div>
+            <span class="oracle-feature-label">Specialties</span>
+            <span>Identity · Life paths · Cycles · Personal timing</span>
+          </div>
         </div>
-        <p class="oracle-quote">
-          “What patterns keep appearing in my life?”<br />“How does this period connect?”
-        </p>
-        <button class="begin-btn" type="button" onclick="window.location.href='#weaver'">
-          <span>Ask The Weaver</span><img src="../assets/arrow.svg" alt="" />
+        <p class="oracle-feature-method"><span class="oracle-feature-label">Method · Numerology</span></p>
+        <div class="oracle-feature-questions">
+          <p class="oracle-feature-label">Example questions</p>
+          <p class="oracle-quote">“What pattern keeps appearing in my life?”</p>
+          <p class="oracle-quote">“What does this period represent?”</p>
+          <p class="oracle-quote">“What does my life path suggest?”</p>
+        </div>
+        <button class="begin-btn" type="button" onclick="window.location.href='../../index.html#ask-oracle'">
+          <span>Ask The Weaver&nbsp; ↗</span>
         </button>
       </div>
-      <img src="../assets/weaver.png" alt="The Weaver" />
     </section>
 
     <section class="oracle-question">
@@ -192,10 +272,10 @@
         <p>Think of clarity as a conversation. What kind are you looking for?</p>
       </div>
       <div class="question-options">
-        <button type="button" onclick="window.location.href='#seer'">I need perspective on a decision.<small>THE SEER</small></button
+        <button type="button" onclick="window.location.href='#sage'">I need perspective on a decision.<small>THE SAGE</small></button
         >
-        <button type="button" onclick="window.location.href='#moonkeeper'">
-          I want to understand my relationships.<small>THE MOONKEEPER</small></button
+        <button type="button" onclick="window.location.href='#seer'">
+          I want to understand my relationships.<small>THE SEER</small></button
         >
         <button type="button" onclick="window.location.href='#moonkeeper'">
           I feel emotionally uncertain.<small>THE MOONKEEPER</small></button
@@ -206,38 +286,37 @@
       </div>
     </section>
     <section class="oracle-others">
-      <p class="eyebrow">The guides are here</p>
+      <p class="eyebrow">The Oracles work together</p>
       <h2>Different voices. One intention.</h2>
       <p>
-        Each Oracle offers a different language for reflection. You can return to the same
-        question through different perspectives and discover something new each time.
+        Each Oracle offers a different language for reflection. You can return to the same question
+        through different perspectives and discover something new each time.
       </p>
       <div class="oracle-mini-grid">
-        <a href="#seer"><img src="../assets/seeker.png" alt="" /><span>The Seer</span></a
-        ><a href="#moonkeeper"
-      ><img src="../assets/moonkeeper.png" alt="" /><span>The Moonkeeper</span></a
-      ><a href="#sage"><img src="../assets/sage.png" alt="" /><span>The Sage</span></a
-      ><a href="#weaver"><img src="../assets/weaver.png" alt="" /><span>The Weaver</span></a>
+        <a href="#seer"><span class="oracle-image-frame"><img src="../assets/seeker.png" alt="The Seer holding a tarot card" /></span><span>The Seer</span></a>
+        <a href="#moonkeeper"><span class="oracle-image-frame"><img src="../assets/moonkeeper.png" alt="The Moonkeeper beside a moonlit window" /></span><span>The Moonkeeper</span></a>
+        <a href="#sage"><span class="oracle-image-frame"><img src="../assets/sage.png" alt="The Sage in a garden" /></span><span>The Sage</span></a>
+        <a href="#weaver"><span class="oracle-image-frame"><img src="../assets/weaver.png" alt="The Weaver beneath a geometric pattern" /></span><span>The Weaver</span></a>
       </div>
-      <button class="begin-btn" type="button" onclick="window.location.href='#seer'">
-        <span>Explore All Readings</span><img src="../assets/arrow.svg" alt="" />
+      <button class="begin-btn" type="button" onclick="window.location.href='../../index.html#ask-oracle'">
+        <span>Explore All Readings&nbsp; ↗</span>
       </button>
     </section>
     <section class="oracle-cta">
-      <p class="eyebrow">Choose your guide and begin</p>
+      <p class="eyebrow">Clarity begins with attention</p>
       <h2>Who will you ask?</h2>
       <div>
-        <button class="begin-btn" type="button" onclick="window.location.href='#seer'">
-          Ask The Seer <img src="../assets/arrow.svg" alt="" /></button
-        >
-        <button class="begin-btn" type="button" onclick="window.location.href='#moonkeeper'">
-          Ask The Moonkeeper <img src="../assets/arrow.svg" alt="" /></button
-        >
-        <button class="begin-btn" type="button" onclick="window.location.href='#sage'">
-          Consult The Sage <img src="../assets/arrow.svg" alt="" /></button
-        >
-        <button class="begin-btn" type="button" onclick="window.location.href='#weaver'">
-          Ask The Weaver <img src="../assets/arrow.svg" alt="" />
+        <button class="begin-btn" type="button" onclick="window.location.href='../../index.html#ask-oracle'">
+          Ask The Seer&nbsp; ↗
+        </button>
+        <button class="begin-btn" type="button" onclick="window.location.href='../../index.html#ask-oracle'">
+          Ask The Moonkeeper&nbsp; ↗
+        </button>
+        <button class="begin-btn" type="button" onclick="window.location.href='../../index.html#ask-oracle'">
+          Consult The Sage&nbsp; ↗
+        </button>
+        <button class="begin-btn" type="button" onclick="window.location.href='../../index.html#ask-oracle'">
+          Ask The Weaver&nbsp; ↗
         </button>
       </div>
     </section>
@@ -261,9 +340,9 @@
         </div>
         <div class="footer-link-group">
           <p>DISCOVER</p>
-          <a href="../../index.html#journal">Journal</a><a href="../../index.html">About</a
-        ><a href="../../index.html">Sign In</a
-        ><a href="../../index.html#journal">Begin Reading</a>
+          <a href="../../index.html#journal">Journal</a>          <a href="../../index.html#about">About</a
+        ><a href="../../index.html#ask-oracle">Sign In</a
+        ><a href="../../index.html#ask-oracle">Begin Reading</a>
         </div>
         <div class="footer-link-group">
           <p>STAY CLOSE</p>
