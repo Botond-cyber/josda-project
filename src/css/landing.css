@@ -240,12 +240,6 @@ body p {
     display: block;
     width: 100%;
     height: auto;
-    border-radius: 0.5rem;
-    transition: scale 0.35s ease;
-}
-
-.calling-card > img:hover {
-    scale: 1.04;
 }
 
 
