@@ -242,6 +242,13 @@ body p {
     height: auto;
 }
 
+.calling-cards-img > img:hover {
+    scale: 1.04;
+}
+.calling-cards-img > img {
+        border-radius: 0.5rem;
+    transition: scale 0.35s ease;
+}
 
 .calling-card h4 {
     text-transform: uppercase;
