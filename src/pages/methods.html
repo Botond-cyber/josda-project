@@ -14,39 +14,28 @@
   <!--Header-->
   <header>
     <div class="header-logo">
-      <img src="../assets/dawn-monogram.svg" alt="logo" />
+      <img src="/src/assets/dawn-monogram.svg" alt="logo" />
       <p>DAWN ORACLE</p>
     </div>
 
-    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation">
-      <span class="menu-toggle-label">Menu</span>
-      <span class="menu-toggle-icon" aria-hidden="true"><span></span><span></span></span>
-    </button>
-
     <nav class="nav" id="main-navigation" aria-label="Main navigation">
-      <div class="nav-item"><a href="#">Readings</a>
+      <div class="nav-item">      <a href="./methods.html#methods">Methods</a>
         <div class="nav-underline"></div>
       </div>
-      <div class="nav-item"><a href="../pages/methods.html">Methods</a>
+      <div class="nav-item"><a href="./oracles.html">Our Oracles</a>
         <div class="nav-underline"></div>
       </div>
-      <div class="nav-item"><a href="../pages/oracles.html">Our Oracles</a>
+      <div class="nav-item"><a href="./pricing.html">Pricing</a>
         <div class="nav-underline"></div>
       </div>
-      <div class="nav-item"><a href="../pages/pricing.html">Pricing</a>
-        <div class="nav-underline"></div>
-      </div>
-      <div class="nav-item"><a href="#">Journal</a>
-        <div class="nav-underline"></div>
-      </div>
-      <div class="nav-item"><a href="#">About</a>
+      <div class="nav-item"><a href="/index.html">About</a>
         <div class="nav-underline"></div>
       </div>
     </nav>
 
     <div class="login-btn-container">
       <div class="sign-in-btn">Sign In</div>
-      <button class="begin-btn" type="button">
+      <button class="begin-btn" type="button" onclick="window.location.href='../../index.html'">
         <span>Begin Reading</span>
         <img src="../assets/arrow.svg" alt="arrow icon" />
       </button>
@@ -61,7 +50,7 @@
         Ancient methods for modern questions.
       </h1>
       <h2>Different traditions offer different ways of seeing.</h2>
-      <button class="begin-btn " type="button">
+      <button class="begin-btn " type="button" onclick="window.location.href='#method-comparison-title'">
         <span>Find Your Method</span>
         <img src="../assets/arrow.svg" alt="arrow icon" />
       </button>
@@ -142,7 +131,7 @@
   <!--Method details-->
 
   <!--Tarot detail-->
-  <div class="method-detail-container">
+  <div class="method-detail-container" id="tarot">
     <div class="method-detail-content-container">
       <div>
         <div class="method-detail-title">
@@ -165,7 +154,7 @@
           <p>04 Explore the interpretation</p>
         </div>
         <div>
-          <button class="begin-btn" type="button">
+          <button class="begin-btn" type="button" onclick="window.location.href='../../index.html#ask-oracle'">
             <span>Begin a Tarot Reading</span>
             <img src="../assets/arrow.svg" alt="arrow icon" />
           </button>
@@ -202,7 +191,7 @@
   </div>
 
   <!--Moon oracle detail-->
-  <div class="method-detail-container detail-dark">
+  <div class="method-detail-container detail-dark" id="moon-oracle">
     <div class="method-detail-content-container">
       <div>
         <div class="method-detail-title">
@@ -225,7 +214,7 @@
           <p>Reflect on what is ready to shift</p>
         </div>
         <div>
-          <button class="begin-btn" type="button">
+          <button class="begin-btn" type="button" onclick="window.location.href='../../index.html#ask-oracle'">
             <span>Enter the Moon Oracle</span>
             <img src="../assets/arrow.svg" alt="arrow icon" />
           </button>
@@ -262,7 +251,7 @@
   </div>
 
   <!--I ching detail-->
-  <div class="method-detail-container iching-detail">
+  <div class="method-detail-container iching-detail" id="iching">
     <div class="method-detail-content-container">
       <div>
         <div class="method-detail-title">
@@ -285,7 +274,7 @@
           <p>REFLECT</p>
         </div>
         <div>
-          <button class="begin-btn" type="button">
+          <button class="begin-btn" type="button" onclick="window.location.href='../../index.html#ask-oracle'">
             <span>Consult the I Ching</span>
             <img src="../assets/arrow.svg" alt="arrow icon" />
           </button>
@@ -316,7 +305,7 @@
   </div>
 
   <!--Numerology detail-->
-  <div class="method-detail-container detail-dark">
+  <div class="method-detail-container detail-dark" id="numerology">
     <div class="method-detail-content-container">
       <div>
         <div class="method-detail-title">
@@ -339,7 +328,7 @@
           <p>Reflect on your personal timing</p>
         </div>
         <div>
-          <button class="begin-btn" type="button">
+          <button class="begin-btn" type="button" onclick="window.location.href='../../index.html#ask-oracle'">
             <span>Calculate My Numbers</span>
             <img src="../assets/arrow.svg" alt="arrow icon" />
           </button>
@@ -469,24 +458,24 @@
   </section>
 
   <!--Bottom thing-->
-  <div class="begin-section">
+  <div class="begin-section" id="methods">
     <p>Clarity begins with attention</p>
     <h1>Where would you like to begin?</h1>
     <h2>Choose the tradition that feels closest to your question.</h2>
     <div class="begin-section-buttons">
-      <button class="begin-btn" type="button">
+      <button class="begin-btn" type="button" onclick="window.location.href='#tarot'">
         <span>Tarot</span>
         <img src="../assets/arrow.svg" alt="arrow icon" />
       </button>
-      <button class="begin-btn btn-outline" type="button">
+      <button class="begin-btn btn-outline" type="button" onclick="window.location.href='#moon-oracle'">
         <span>Moon Oracle</span>
         <img src="../assets/arrow_higlight.svg" alt="arrow icon" />
       </button>
-      <button class="begin-btn btn-outline" type="button">
+      <button class="begin-btn btn-outline" type="button" onclick="window.location.href='#iching'">
         <span>I Ching</span>
         <img src="../assets/arrow_higlight.svg" alt="arrow icon" />
       </button>
-      <button class="begin-btn btn-outline" type="button">
+      <button class="begin-btn btn-outline" type="button" onclick="window.location.href='#numerology'">
         <span>Numerology</span>
         <img src="../assets/arrow_higlight.svg" alt="arrow icon" />
       </button>
@@ -505,34 +494,35 @@
       <nav class="footer-links" aria-label="Footer navigation">
         <div class="footer-link-group">
           <p>EXPLORE</p>
-          <a href="#">Readings</a>
+          <a href="../../index.html">Readings</a>
           <a href="../pages/methods.html">Methods</a>
           <a href="../pages/oracles.html">Our Oracles</a>
-          <a href="#">Pricing</a>
+          <a href="../pages/pricing.html">Pricing</a>
         </div>
         <div class="footer-link-group">
           <p>DISCOVER</p>
-          <a href="#">Journal</a>
-          <a href="#">About</a>
-          <a href="#">Sign In</a>
-          <a href="#">Begin Reading</a>
+          <a href="../../index.html#journal">Journal</a>
+          <a href="../../index.html">About</a>
+          <a href="../../index.html">Sign In</a>
+          <a href="../../index.html#journal">Begin Reading</a>
         </div>
         <div class="footer-link-group">
           <p>STAY CLOSE</p>
           <a href="mailto:hello@dawnoracle.com">hello@dawnoracle.com</a>
-          <span>Instagram · Pinterest</span>
-          <a href="#">Return to yourself ↗</a>
+          <a href="https://www.instagram.com/" rel="noreferrer">Instagram</a>
+          <a href="https://www.pinterest.com/" rel="noreferrer">Pinterest</a>
+          <a href="../../index.html">Return to yourself ↗</a>
         </div>
       </nav>
     </div>
     <div class="footer-bottom">
       <p>© 2026 Dawn Oracle. For reflection, not deterministic prediction.</p>
       <div>
-        <a href="#">Privacy</a>
+        <a href="../../index.html">Privacy</a>
         <span>·</span>
-        <a href="#">Terms</a>
+        <a href="../../index.html">Terms</a>
         <span>·</span>
-        <a href="#">Accessibility</a>
+        <a href="../../index.html">Accessibility</a>
       </div>
     </div>
   </footer>

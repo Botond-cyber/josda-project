@@ -39,7 +39,7 @@
     </nav>
 
     <div class="login-btn-container">
-      <div class="sign-in-btn">Sign In</div>
+      <a class="sign-in-btn" href="#ask-oracle">Sign In</a>
       <button class="begin-btn" type="button" onclick="window.location.href='#journal'">
         <span>Begin Reading</span>
         <img src="src/assets/arrow.svg" alt="arrow icon" />
@@ -95,19 +95,19 @@
   <div class="calling-cards">
     <div class="calling-card"><img src="src/assets/editorial_artwork.png" alt="">
       <h4>Love</h4>
-      <p>Explore connection, attraction, boundaries and emotional patterns.</p><a href="">Explore ↗</a>
+      <p>Explore connection, attraction, boundaries and emotional patterns.</p><a href="#ask-oracle">Explore ↗</a>
     </div>
     <div class="calling-card"><img src="src/assets/editorial_artwork2.png" alt="">
       <h4>Life</h4>
-      <p>Find perspective when you're standing between what was and what comes next.</p><a href="">Explore ↗</a>
+      <p>Find perspective when you're standing between what was and what comes next.</p><a href="#ask-oracle">Explore ↗</a>
     </div>
     <div class="calling-card"><img src="src/assets/Editorial_artwork3.png" alt="">
       <h4>Career</h4>
-      <p>Explore ambition, decisions, opportunities and your next direction.</p><a href="">Explore ↗</a>
+      <p>Explore ambition, decisions, opportunities and your next direction.</p><a href="#ask-oracle">Explore ↗</a>
     </div>
   </div>
 </div>
-<div class="ask-oracle-container">
+<div class="ask-oracle-container" id="ask-oracle">
   <div class="ask-oracle-text">
     <p>A moment, just for you</p>
     <h2>Ask the Oracle</h2>
@@ -353,7 +353,7 @@
   </div>
 </div>
 
-<div class="about-container">
+<div class="about-container" id="about">
   <img src="src/assets/room.png" alt="A quiet room with a candle and a table of books">
   <div class="about-copy">
     <p>About Dawn Oracle</p>
@@ -361,7 +361,7 @@
     <h2>We help you see it differently.</h2>
     <p>Dawn Oracle was created around a simple idea: sometimes we don't need another answer. We need another
       perspective.</p>
-    <button class="ask-btn" type="button">
+    <button class="ask-btn" type="button" onclick="window.location.href='#about'">
       <span>Our Story ↗</span>
     </button>
   </div>
@@ -397,7 +397,7 @@
         <li>One-card readings</li>
         <li>Basic Tarot readings</li>
       </ul>
-      <button class="ask-btn bg-dark" type="button">Begin Free ↗</button>
+      <button class="ask-btn bg-dark" type="button" onclick="window.location.href='#ask-oracle'">Begin Free ↗</button>
     </div>
     <div class="pricing-card pricing-card-popular">
       <p>Most popular</p>
@@ -408,7 +408,7 @@
         <li>Three-card spreads</li>
         <li>Five-card spreads</li>
       </ul>
-      <button class="ask-btn" type="button">Enter Moonlight ↗</button>
+      <button class="ask-btn" type="button" onclick="window.location.href='src/pages/pricing.html#readings'">Enter Moonlight ↗</button>
     </div>
     <div class="pricing-card">
       <p>A deeper practice</p>
@@ -419,7 +419,7 @@
         <li>Extended interpretations</li>
         <li>Pattern insights</li>
       </ul>
-      <button class="ask-btn bg-dark" type="button">Go Deeper ↗</button>
+      <button class="ask-btn bg-dark" type="button" onclick="window.location.href='src/pages/pricing.html#readings'">Go Deeper ↗</button>
     </div>
   </div>
   <a class="pricing-link" href="src/pages/pricing.html">View All Pricing &amp; Services ↗</a>
@@ -435,34 +435,34 @@
       <img src="src/assets/lake.png" alt="Moonlight reflected across a quiet lake">
       <p>Symbols · 5 min read</p>
       <h3>What does The Moon mean in Tarot?</h3>
-      <a href="#">Read the story ↗</a>
+      <a href="#journal">Read the story ↗</a>
     </div>
     <div>
       <img src="src/assets/writing.png" alt="Writing in a journal beside a candle">
       <p>Ritual · 5 min read</p>
       <h3>How to ask the Oracle a better question</h3>
-      <a href="#">Read the story ↗</a>
+      <a href="#journal">Read the story ↗</a>
     </div>
     <div>
       <img src="src/assets/cards.png" alt="Three tarot cards arranged on linen">
       <p>Practice · 5 min read</p>
       <h3>Tarot spreads for new beginnings</h3>
-      <a href="#">Read the story ↗</a>
+      <a href="#journal">Read the story ↗</a>
     </div>
     <div>
       <img src="src/assets/starsymbol.png" alt="A golden star symbol on a dark stone">
       <p>Symbols · 5 min read</p>
       <h3>The symbolism of The Star</h3>
-      <a href="#">Read the story ↗</a>
+      <a href="#journal">Read the story ↗</a>
     </div>
   </div>
-  <a class="journal-link" href="#">Explore the Journal ↗</a>
+  <a class="journal-link" href="#journal">Explore the Journal ↗</a>
 </div>
 <div class="cta-container">
   <p>Clarity begins with attention</p>
   <h2>The day is beginning.</h2>
   <h3>What are you ready to see?</h3>
-  <button class="ask-btn" type="button">Ask the Oracle ↗</button>
+  <a class="ask-btn" href="#ask-oracle">Ask the Oracle ↗</a>
 </div>
 <footer>
   <div class="footer-main">
@@ -477,34 +477,35 @@
     <nav class="footer-links" aria-label="Footer navigation">
       <div class="footer-link-group">
         <p>EXPLORE</p>
-        <a href="#">Readings</a>
+        <a href="index.html">Readings</a>
         <a href="src/pages/methods.html">Methods</a>
         <a href="src/pages/oracles.html">Our Oracles</a>
-        <a href="#">Pricing</a>
+        <a href="src/pages/pricing.html">Pricing</a>
       </div>
       <div class="footer-link-group">
         <p>DISCOVER</p>
-        <a href="#">Journal</a>
-        <a href="#">About</a>
-        <a href="#">Sign In</a>
-        <a href="#">Begin Reading</a>
+        <a href="index.html#journal">Journal</a>
+        <a href="index.html">About</a>
+        <a href="index.html">Sign In</a>
+        <a href="index.html#journal">Begin Reading</a>
       </div>
       <div class="footer-link-group">
         <p>STAY CLOSE</p>
         <a href="mailto:hello@dawnoracle.com">hello@dawnoracle.com</a>
-        <span>Instagram · Pinterest</span>
-        <a href="#">Return to yourself ↗</a>
+        <a href="https://www.instagram.com/" rel="noreferrer">Instagram</a>
+        <a href="https://www.pinterest.com/" rel="noreferrer">Pinterest</a>
+        <a href="index.html">Return to yourself ↗</a>
       </div>
     </nav>
   </div>
   <div class="footer-bottom">
     <p>© 2026 Dawn Oracle. For reflection, not deterministic prediction.</p>
     <div>
-      <a href="#">Privacy</a>
+      <a href="index.html">Privacy</a>
       <span>·</span>
-      <a href="#">Terms</a>
+      <a href="index.html">Terms</a>
       <span>·</span>
-      <a href="#">Accessibility</a>
+      <a href="index.html">Accessibility</a>
     </div>
   </div>
 </footer>
