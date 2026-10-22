@@ -3,6 +3,11 @@
   background: var(--surface-primary-light);
   overflow-x: hidden;
 }
+
+body h1 {
+ color: var(--surface-primary-dark);
+}
+
 .oracle-page main {
   width: 100%;
 }
