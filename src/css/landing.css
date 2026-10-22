@@ -345,8 +345,10 @@ body p {
     margin-bottom: 1rem;
 }
 
-#ask-oracle-input-text input:focus {
-    border: 2px solid var(--surface-higlight);
+#ask-oracle-input-text:focus {
+    border: 2px solid var(--surface-higlight) !important;
+    outline: none;
+    border-radius: 0.5rem;
 }
 
 
