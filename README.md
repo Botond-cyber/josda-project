@@ -7,6 +7,9 @@
 [PLACEHOLDER: Add a short description of what Josda Project does, who it is
 for, and the problem it solves.]
 
+### Design
+https://www.figma.com/design/kmSVW2Vo7BN8jVE7OOF07y/Untitled?node-id=0-1&t=VCXc2G1MIjpyWA6w-0
+
 ### Key features
 
 - [PLACEHOLDER: Feature 1]
