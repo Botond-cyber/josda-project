@@ -345,7 +345,7 @@ body p {
     margin-bottom: 1rem;
 }
 
-.ask-oracle-input input:focus {
+#ask-oracle-input-text input:focus {
     border: 2px solid var(--surface-higlight);
 }
 
