@@ -1,33 +1,51 @@
-# Josda Project
+# Dawn Oracle
 
-> **Project status:** [PLACEHOLDER: e.g. In development / MVP / Production]
+Dawn Oracle is a static, multi-page frontend concept for reflective tarot and oracle readings. It presents ancient symbolic practices as a calm, modern digital experience focused on perspective rather than deterministic prediction.
+
+> **Project status:** Frontend prototype / in development
 
 ## Overview
 
-[PLACEHOLDER: Add a short description of what Josda Project does, who it is
-for, and the problem it solves.]
+The site helps visitors explore questions about love, life, relationships, career, change, and personal growth through four reflective methods:
 
-### Design
-https://www.figma.com/design/kmSVW2Vo7BN8jVE7OOF07y/Untitled?node-id=0-1&t=VCXc2G1MIjpyWA6w-0
+- Tarot
+- Moon Oracle
+- I Ching
+- Numerology
 
-### Key features
+The experience includes an interactive landing page concept, reading prompts, oracle profiles, method explanations, pricing concepts, a daily oracle section, and journal content placeholders. The current repository is a frontend-only prototype; authentication, payments, persistent reading history, and backend-generated interpretations are not implemented.
 
-- [PLACEHOLDER: Feature 1]
-- [PLACEHOLDER: Feature 2]
-- [PLACEHOLDER: Feature 3]
+## Design
 
-### Tech stack
+The interface is based on the Dawn Oracle design concept in Figma:
 
-- **Frontend/build tool:** Vite
-- **Language:** JavaScript
+<https://www.figma.com/design/kmSVW2Vo7BN8jVE7OOF07y/Untitled?node-id=0-1&t=VCXc2G1MIjpyWA6w-0>
+
+## Features
+
+- Dawn Oracle landing page with hero section, reading prompt, daily oracle, about, pricing, journal, and CTA sections.
+- Four reflective methods: Tarot, Moon Oracle, I Ching, and Numerology.
+- Four oracle personas: The Seer, The Moonkeeper, The Sage, and The Weaver.
+- Separate pages for methods, oracles, and pricing.
+- Responsive visual design built with modular CSS files and custom artwork.
+- Vite development server and production build configuration.
+- HTML validation during development, Oxlint checks, and Prettier formatting.
+- GitHub Pages deployment through GitHub Actions.
+
+## Tech stack
+
+- **Markup:** HTML
 - **Styling:** CSS
+- **Build tool:** Vite
+- **JavaScript:** ES modules; the current `src/main.js` is the application entry point
+- **Fonts:** `@fontsource/cookie`, `@fontsource/cormorant-garamond`, and `@fontsource/inter`
+- **Development quality tools:** Oxlint, Prettier, and html-validate
 - **Deployment:** GitHub Pages via GitHub Actions
-- **Additional technologies:** [PLACEHOLDER: Add libraries, APIs, or services]
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org/) LTS (the workflow uses the current LTS release)
-- npm (included with Node.js)
+- [Node.js](https://nodejs.org/) LTS
+- npm, included with Node.js
 - Git
 
 Check your installed versions:
@@ -59,25 +77,24 @@ git --version
    npm run dev
    ```
 
-   The server is available at <http://localhost:3000>.
+   Vite serves the site at <http://localhost:3000>.
 
-4. Open the URL shown in the terminal. Vite reloads the page as source files
-   change.
+4. Open the URL shown in the terminal. Vite reloads the page as source files change.
 
 ## Available scripts
 
-| Command                | Purpose                                 |
-| ---------------------- | --------------------------------------- |
-| `npm run dev`          | Start the Vite development server       |
-| `npm run build`        | Create a production build in `dist/`    |
-| `npm run preview`      | Preview the production build locally    |
-| `npm run lint`         | Run Oxlint                              |
-| `npm run format`       | Format project files with Prettier      |
+| Command | Purpose |
+| --- | --- |
+| `npm run dev` | Start the Vite development server on port 3000 |
+| `npm run build` | Build all configured pages into `dist/` |
+| `npm run preview` | Preview the production build locally |
+| `npm run lint` | Run Oxlint across the repository |
+| `npm run format` | Format project files with Prettier |
 | `npm run format:check` | Check formatting without changing files |
 
-## Production build
+## Production build and checks
 
-Run the same checks used by continuous integration:
+Run the main local checks before opening a pull request:
 
 ```bash
 npm ci
@@ -92,28 +109,34 @@ To preview the generated site:
 npm run preview
 ```
 
+The Vite configuration also validates the main HTML document while the development server is running with `html-validate`.
+
+## Pages
+
+Vite is configured to build these HTML entry points:
+
+- `index.html` — Dawn Oracle landing page and reading entry point
+- `src/pages/methods.html` — descriptions and comparisons for the four methods
+- `src/pages/oracles.html` — oracle personas and their specialties
+- `src/pages/pricing.html` — subscription plans, individual readings, comparison table, and FAQ
+
 ## GitHub Pages deployment
 
-Deployment is configured in
-[`.github/workflows/deploy.yml`](./.github/workflows/deploy.yml). A push to the
-repository’s `master` branch or a manual workflow dispatch will:
+Deployment is defined in [`.github/workflows/deploy.yml`](./.github/workflows/deploy.yml). A push to the `master` branch or a manual workflow dispatch:
 
-1. Install dependencies with `npm ci`.
-2. Run linting and formatting checks.
-3. Build the site with Vite.
-4. Upload `dist/` as a Pages artifact.
-5. Deploy the artifact to GitHub Pages.
+1. Checks out the repository.
+2. Installs the current Node.js LTS release and npm dependencies.
+3. Runs Oxlint.
+4. Formats the repository with Prettier.
+5. Builds the site with Vite.
+6. Uploads `dist/` as a GitHub Pages artifact.
+7. Deploys the artifact to GitHub Pages.
 
-Before the first deployment, verify the following repository settings:
+The Vite configuration uses the repository name as the base path in GitHub Actions. The deployed site is intended to be available at:
 
-1. In **Settings → Pages**, set **Source** to **GitHub Actions**.
-2. In **Settings → Actions → General**, allow GitHub Actions to run.
-3. Push to `master`, or start **Deploy static content to Pages** from the
-   **Actions** tab.
+<https://Botond-cyber.github.io/josda-project/>
 
-The Vite configuration automatically uses the repository name as the base path
-in GitHub Actions, so asset URLs work when the site is hosted at
-`https://Botond-cyber.github.io/josda-project/`.
+Before deploying, ensure the repository's Pages source is set to **GitHub Actions** under **Settings → Pages**.
 
 ## Project structure
 
@@ -122,44 +145,45 @@ in GitHub Actions, so asset URLs work when the site is hosted at
 ├── .github/workflows/deploy.yml  # GitHub Pages deployment workflow
 ├── public/                        # Static files copied to the build output
 ├── src/
-│   ├── assets/                    # Source assets
-│   ├── css/                      # Stylesheets
-│   └── main.js                   # Application entry point
-├── index.html                     # HTML entry point
-├── vite.config.js                 # Vite and development validation config
+│   ├── assets/                    # Images, illustrations, icons, and card artwork
+│   ├── css/                      # Shared and page-specific stylesheets
+│   ├── pages/                    # Methods, oracles, and pricing pages
+│   └── main.js                   # JavaScript entry point
+├── index.html                     # Dawn Oracle landing page
+├── vite.config.js                 # Vite, HTML validation, and multi-page build config
 ├── package.json                   # Scripts and dependencies
 └── package-lock.json              # Locked dependency tree
 ```
 
 ## Configuration
 
-[PLACEHOLDER: Document required environment variables, API endpoints, feature
-flags, or secrets. Never commit credentials. If no configuration is required,
-state that explicitly.]
+No environment variables, API keys, or external services are currently required to run the frontend. Do not commit credentials or other secrets if integrations are added later.
 
 ## Testing and quality checks
 
-[PLACEHOLDER: Document the test strategy and add test commands when tests are
-introduced.]
+There is currently no automated test suite. Before submitting changes, run:
 
-At minimum, run `npm run lint`, `npm run format:check`, and `npm run build`
-before opening a pull request.
+```bash
+npm run lint
+npm run format:check
+npm run build
+```
+
+Manually check the generated pages with `npm run preview`, including navigation, responsive layouts, images, and links between the landing page and the three secondary pages.
 
 ## Contributing
 
 1. Create a focused branch from `master`.
-2. Make and locally validate your changes.
-3. Update documentation when behavior or setup changes.
-4. Open a pull request and describe the validation performed.
-
-[PLACEHOLDER: Add contribution rules, review requirements, issue templates, or
-the preferred branch naming convention.]
+2. Make the smallest coherent change possible.
+3. Keep page content, links, and responsive styling consistent across the site.
+4. Run linting, formatting checks, and a production build locally.
+5. Update this README when setup, scripts, pages, or deployment behavior changes.
+6. Open a pull request describing the change and the validation performed.
 
 ## License
 
-[PLACEHOLDER: Add the project license, copyright holder, and a link to the
-license file.]
+No license has been specified for this repository yet. Until a license is added, the project should not be assumed to be available for reuse, redistribution, or modification outside the repository.
 
 ## Contact
 
-[PLACEHOLDER: Add the maintainer/team name and the preferred support channel.]
+For project questions or proposed changes, open an issue in the [GitHub repository](https://github.com/Botond-cyber/josda-project/issues). The design reference is available in the [Figma file](https://www.figma.com/design/kmSVW2Vo7BN8jVE7OOF07y/Untitled?node-id=0-1&t=VCXc2G1MIjpyWA6w-0).
