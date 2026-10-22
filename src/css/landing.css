@@ -345,6 +345,11 @@ body p {
     margin-bottom: 1rem;
 }
 
+ask-oracle-input input:focus {
+    border: 2px solid var(--surface-higlight);
+}
+
+
 .ask-oracle-input #input-title p{
     text-transform: uppercase;
     color: var(--surface-higlight);
